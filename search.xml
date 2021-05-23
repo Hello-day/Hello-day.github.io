@@ -1,0 +1,867 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>IP地址简介</title>
+    <url>/2021/01/23/IP/</url>
+    <content><![CDATA[<p><img src="https://img.rruu.net/image/600bf4ed4bac3" loading="lazy"></p>
+<a id="more"></a>
+
+<h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>小白入门！本文可以说是一个整合，希望表达的足够清楚！</p>
+<h3 id="0x01什么是ip地址？"><a href="#0x01什么是ip地址？" class="headerlink" title="0x01什么是ip地址？"></a>0x01什么是ip地址？</h3><p>IP地址（英语：Internet Protocol Address，又译为网际协议地址）是给每个连接在Internet上的主机分配的一个地址，<strong>每个计算机必须有一个 IP 地址</strong>才能够连入因特网。每个 IP 包必须有一个地址才能够发送到另一台计算机。</p>
+<p>按照<em>TCP/IP协议</em>规定，<strong>IP地址是一个32位的二进制数</strong>，通常被分割为4个“8位二进制数”（也就是4个字节）。IP地址通常用“点分十进制”表示成（a.b.c.d）的形式，其中，a,b,c,d都是0~255之间的十进制整数。例：点分十进IP地址（100.4.5.6），实际上是32位二进制数（01100100.00000100.00000101.00000110）。<br>（一个计算机字节可以包含 256 个不同的值：00000000、00000001、00000010、00000011、00000100、00000101、00000110、00000111、00001000 … 直到 11111111。现在，你知道了为什么 <strong>IP 地址的每个数都是介于 0 到 255 之间</strong>。）</p>
+<h3 id="0x02ip地址的分类"><a href="#0x02ip地址的分类" class="headerlink" title="0x02ip地址的分类"></a>0x02ip地址的分类</h3><p>最初设计互联网时，为了便于寻址以及层次化构造网络，每个IP地址的内容被划分为两段：<strong>网络ID和主机ID</strong>。</p>
+<p><strong>同一个物理网络上的所有主机都使用同一个网络ID</strong>，网络上的一个主机（包括网络上工作站，服务器和路由器等）有一个主机ID与其对应。Internet委员会定义了5种IP地址类型A~E，由InternetNIC在全球范围内统一分配，可适应不同容量的网络。</p>
+<p>其中A、B、C类在日常生活中使用，它们按照网络号的位数划分，适用的类型分别为：大型网络、中型网络、小型网络（因为总位数不变，网络号越短，留给主机号的位数就越长，能表示的主机数就越多）。</p>
+<p>D类与E类为多目的广播地址和科研保留地址。</p>
+<p><img src="https://ss2.baidu.com/6ON1bjeh1BF3odCf/it/u=3898137438,546573965&fm=15&gp=0.jpg" alt="网络地址的划分" loading="lazy"></p>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>特征</th>
+<th>网络范围</th>
+<th>默认掩码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A类地址</td>
+<td>第1位始终为0</td>
+<td>0-127.x.x.x</td>
+<td>255.0.0.0/8</td>
+</tr>
+<tr>
+<td>B类地址</td>
+<td>第1、2位始终为10</td>
+<td>128-191.x.x.x</td>
+<td>255.255.0.0/16</td>
+</tr>
+<tr>
+<td>C类地址</td>
+<td>第1、2、3位始终为110</td>
+<td>192-y.x.x.x</td>
+<td>255.255.255.0/24</td>
+</tr>
+</tbody></table>
+<h4 id="A类IP地址"><a href="#A类IP地址" class="headerlink" title="A类IP地址"></a>A类IP地址</h4><p>A类IP地址是指， 在IP地址的四段号码中，<strong>第一段号码为网络号码，剩下的三段号码为本地计算机的号码。</strong>如果用二进制表示IP地址的话，A类IP地址就由1字节的网络地址和3字节主机地址组成，网络地址的最高位必须是“0”。A类IP地址中网络的标识长度为8位，主机标识的长度为24位，<strong>A类网络地址数量较少</strong>，有126个网络，每个网络可以容纳主机数达1600多万台。能拥有A类地址的都是大公司或者组织！尊贵 A类IP地址范围为1.0.0.0到127.255.255.255[1] （二进制表示为：00000001 00000000 00000000 00000000 - 01111110 11111111 11111111 11111111）。最后一个是广播地址。</p>
+<p>A类IP地址的子网掩码（这个下文会讲）为255.0.0.0，每个网络支持的最大主机数为256的3次方-2=16777214台。</p>
+<h4 id="B类IP地址"><a href="#B类IP地址" class="headerlink" title="B类IP地址"></a>B类IP地址</h4><p> B类IP地址是指，在IP地址的四段号码中，前两段号码为网络号码。如果用二进制表示IP地址的话，B类IP地址就由2字节的网络地址和2字节主机地址组成，网络地址的最高位必须是“10”。B类IP地址中网络的标识长度为16位，主机标识的长度为16位，B类网络地址适用于中等规模的网络，有16384个网络，每个网络所能容纳的计算机数为6万多台。<br>B类IP地址地址范围128.0.0.0-191.255.255.255[3] （二进制表示为：10000000 00000000 00000000 00000000—-10111111 11111111 11111111 11111111）。 最后一个是广播地址。<br>B类IP地址的子网掩码为255.255.0.0，每个网络支持的最大主机数为256的2次方-2=65534台。</p>
+<h4 id="C类IP地址"><a href="#C类IP地址" class="headerlink" title="C类IP地址"></a>C类IP地址</h4><p>C类IP地址是指，在IP地址的四段号码中，前三段号码为网络号码，剩下的一段号码为本地计算机的号码。如果用二进制表示IP地址的话，C类IP地址就由3字节的网络地址和1字节主机地址组成，网络地址的最高位必须是“110”。C类IP地址中网络的标识长度为24位，主机标识的长度为8位，C类网络地址数量较多，有209万余个网络。适用于小规模的局域网络，每个网络最多只能包含254台计算机。</p>
+<p> C类IP地址范围192.0.0.0-223.255.255.255[3] （二进制表示为: 11000000 00000000 00000000 00000000 - 11011111 11111111 11111111 11111111）。<br> C类IP地址的子网掩码为255.255.255.0，每个网络支持的最大主机数为256-2=254台</p>
+<h4 id="D类IP地址"><a href="#D类IP地址" class="headerlink" title="D类IP地址"></a>D类IP地址</h4><p> D类IP地址在历史上被叫做多播地址(multicast address)，即组播地址。在以太网中，多播地址命名了一组应该在这个网络中应用接收到一个分组的站点。多播地址的最高位必须是“1110”，范围从224.0.0.0到239.255.255.255。</p>
+<h4 id="一些特殊的地址"><a href="#一些特殊的地址" class="headerlink" title="一些特殊的地址"></a>一些特殊的地址</h4><ol>
+<li>每一个字节都为0的地址（“0.0.0.0”）对应于当前主机；</li>
+<li> IP地址中的每一个字节都为1的IP地址（“255．255．255．255”）是当前子网的广播地址；</li>
+<li> IP地址中凡是以“11110”开头的<strong>E类IP地址</strong>都保留用于将来和实验使用。</li>
+<li> IP地址中不能以十进制“127”作为开头，该类地址中数字127．0．0．1到127．255．255．255用于回路测试，如：127.0.0.1可以代表本机IP地址，用“<a href="http://127.0.0.1/">http://127.0.0.1</a>”就可以测试本机中配置的Web服务器。</li>
+<li>网络ID的第一个8位组也不能全置为“0”，全“0”表示本地网络。</li>
+</ol>
+<h3 id="0x03内网与外网（公网）"><a href="#0x03内网与外网（公网）" class="headerlink" title="0x03内网与外网（公网）"></a>0x03内网与外网（公网）</h3><p> ipv4的三十二位地址，充其量也就2的32次方等于4 294 967 296，约43亿种ip，还要从中扣除D类E类还有一部分特殊ip地址，很明显不够全世界的人用啊！那么我们现在是怎么上网的呢？</p>
+<p>地址按用途分为内网ip和公网ip两种。所谓内网ip就是在A、B、C三类IP地址中单独拎出来的网段，这些地址不能拿来做公网ip。公网ip具有唯一性，不同的公网间，可能会出现两台机器ip相同的情况。不要慌，那是恰巧分配到了相同的内网ip。打一个比方，把公网ip想象成你的家庭住址，而内网ip则是你具体在家里的位置：卧室、客厅……显然两个人可能都在家里的客厅（内网ip相同），但这并不妨碍找到他们的地址是唯一的，因为家庭住址（公网ip）不同。而且内网ip会随着每次联网而动态分配。</p>
+<p>私有ip属于非注册地址，即不会在Internet上被分配，专门为组织机构内部使用。</p>
+<p><strong>只有公网ip可以连接Internet，内网ip在 Internet上是无效的。</strong>这样很好地隔离了局域网和 Internet。私有ip必须通过NAT将内部IP地址转换成公网上可用的IP地址，才能实现内部IP地址与外部公网的通信。你可能想问，那好理解啊，看来我的路由器就是有公网ip的，我的手机连上它就是有了在这个局域网里的内网ip！没这么简单哈，由于ipv4资源实在枯竭，所以我们的路由器距离公网还有1-3层NAT的样子。</p>
+<hr>
+<h3 id="0x04子网掩码"><a href="#0x04子网掩码" class="headerlink" title="0x04子网掩码"></a>0x04子网掩码</h3><h4 id="1、子网掩码的概念及作用"><a href="#1、子网掩码的概念及作用" class="headerlink" title="1、子网掩码的概念及作用"></a>1、子网掩码的概念及作用</h4><p>子网掩码是一个应用于TCP/IP网络的32位二进制值，它可以屏蔽掉ip地址中的一部分，从而分离出ip地址中的网络部分与主机部分，基于子网掩码，管理员可以将网络进一步划分为若干子网。</p>
+<h4 id="2、为什么需要使用子网掩码"><a href="#2、为什么需要使用子网掩码" class="headerlink" title="2、为什么需要使用子网掩码"></a>2、为什么需要使用子网掩码</h4><p>虽说子网掩码可以分离出ip地址中的网络部分与主机部分，可大家还是会有疑问，比如为什么要区分网络地址与主机地址？区分以后又怎样呢？</p>
+<p>在使用TCP/IP协议的两台计算机之间进行通信时，我们通过将本机的子网掩码与接受方主机的ip地址进行’与’运算，即可得到目标主机所在的网络号，又由于每台主机在配置TCP/IP协议时都设置了一个本机ip地址与子网掩码，所以可以知道本机所在的网络号。</p>
+<p>通过比较这两个网络号，就可以知道接受方主机是否在本网络上。如果网络号相同，表明接受方在本网络上，那么可以通过相关的协议把数据包直接发送到目标主机；如果网络号不同，表明目标主机在远程网络上，那么数据包将会发送给本网络上的路由器，由路由器将数据包发送到其他网络，直至到达目的地。</p>
+<h4 id="3、如何用子网掩码得到网络-主机地址"><a href="#3、如何用子网掩码得到网络-主机地址" class="headerlink" title="3、如何用子网掩码得到网络/主机地址"></a>3、如何用子网掩码得到网络/主机地址</h4><p>过程如下：</p>
+<p>1.将ip地址与子网掩码转换成二进制；</p>
+<p>2.将二进制形式的ip地址与子网掩码做’与’运算，将答案化为十进制便得到网络地址；</p>
+<p>3.将二进制形式的子网掩码取“反”；</p>
+<p>4.将取”反“后的子网掩码与ip地址做’与’运算，将答案化为十进制便得到主机地址。</p>
+<p>下面用一个例子演示：</p>
+<p>假设有一个IP 地址：192.168.0.1</p>
+<p>子网掩码为：255.255.255.0</p>
+<p>化为二进制为：I P 地址11000000.10101000.00000000.00000001</p>
+<p>子网掩码11111111.11111111.11111111.00000000</p>
+<p>将两者做’与’运算得：11000000.10101000.00000000.00000000</p>
+<p>将其化为十进制得：192.168.0.0</p>
+<p>这便是上面ip的网络地址，主机地址以此类推。</p>
+<p><img src="http://p99.pstatp.com/large/pgc-image/15394993503824979f7ee2b" alt="子网掩码学习小记" loading="lazy"></p>
+<h4 id="4、子网掩码的分类"><a href="#4、子网掩码的分类" class="headerlink" title="4、子网掩码的分类"></a>4、子网掩码的分类</h4><p>1）缺省子网掩码：</p>
+<p>即未划分子网，对应的网络号的位都置1，主机号都置0。</p>
+<p>A类网络缺省子网掩码：255.0.0.0</p>
+<p>B类网络缺省子网掩码：255.255.0.0</p>
+<p>C类网络缺省子网掩码：255.255.255.0</p>
+<p>2）自定义子网掩码：</p>
+<p>将一个网络划分为几个子网，需要每一段使用不同的网络号或子网号，实际上我们可以认为是将主机号分为两个部分：子网号、子网主机号。 形式如下：</p>
+<p>未做子网划分的ip地址：网络号＋主机号</p>
+<p>做子网划分后的ip地址：网络号＋子网号＋子网主机号</p>
+<p>也就是说ip地址在化分子网后，以前的主机号位置的一部分给了子网号，余下的是子网主机号。</p>
+<p>例如，给你一个C类IP地址192.168.0.0。你想划分2个子网，一个里面有100台电脑，另一个有50台电脑。100大于2的6次方，小于2的7次方，所以主机位数取7位。那么<strong>网络位数就是32-7=25位</strong>。25位的<strong>子网掩码11111111.11111111.11111111.10000000</strong>     换算成10进制的就是255.255.255.128，这就是第一个子网的子网掩码，网络号为192.168.0.0/25，网络地址192.168.0.0，主机地址192.168.0.1~192.168.0.126，广播地址192.168.0.127</p>
+<p>50大于2的5次方，小于2的6次方，所以主机位数取6位。那么网络位数就是32-6=26位。26位的子网掩码是11111111.11111111.11111111.11000000   换算成10进制的就是255.255.255.192，这就是第二个子网的子网掩码，网络号为192.168.0.128.26，网络地址192.168.0.128，主机地址192.168.0.129~192.168.0.190，广播地址192.168.0.191 </p>
+<h3 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h3><p>第一次写科普类的博客，可能存在不严谨之处，欢迎指正！！</p>
+]]></content>
+      <categories>
+        <category>Web_Is_Good</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第一篇博文</title>
+    <url>/2021/01/23/first/</url>
+    <content><![CDATA[<p>耗时两天，把博客搭好，然后美化了一下！试一下，这是第一篇博文！是时候去完成那些咕咕咕的项目了！</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>二叉树的运算</title>
+    <url>/2021/04/12/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E8%BF%90%E7%AE%97/</url>
+    <content><![CDATA[<p>二叉树的结构体定义、创建二叉树、先序、中序、后序遍历运算。</p>
+<a id="more"></a>
+
+<h3 id="二叉树结点结构体"><a href="#二叉树结点结构体" class="headerlink" title="二叉树结点结构体"></a>二叉树结点结构体</h3><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">btnode</span>
+<span class="token punctuation">&#123;</span>
+    ElemType element<span class="token punctuation">;</span>         <span class="token comment">//数据域</span>
+    <span class="token keyword">struct</span> <span class="token class-name">btnode</span> <span class="token operator">*</span>lChild<span class="token punctuation">;</span>    <span class="token comment">//左子树</span>
+    <span class="token keyword">struct</span> <span class="token class-name">btnode</span> <span class="token operator">*</span>rChild<span class="token punctuation">;</span>    <span class="token comment">//右子树</span>
+<span class="token punctuation">&#125;</span>BTNode<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="二叉树结构体"><a href="#二叉树结构体" class="headerlink" title="二叉树结构体"></a>二叉树结构体</h3><p>只包含一个指向二叉树根节点的指针。</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">binarytree</span>
+<span class="token punctuation">&#123;</span>
+    BTNode <span class="token operator">*</span>root<span class="token punctuation">;</span>           
+<span class="token punctuation">&#125;</span>BinaryTree<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="初始化二叉树"><a href="#初始化二叉树" class="headerlink" title="初始化二叉树"></a>初始化二叉树</h3><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">Create</span><span class="token punctuation">(</span>BinaryTree <span class="token operator">*</span>bt<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    bt<span class="token operator">-></span>root <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="创建新结点"><a href="#创建新结点" class="headerlink" title="创建新结点"></a>创建新结点</h3><pre class="line-numbers language-c" data-language="c"><code class="language-c">BTNode<span class="token operator">*</span> <span class="token function">NewNode</span><span class="token punctuation">(</span>ElemType x<span class="token punctuation">,</span> BTNode <span class="token operator">*</span>ln<span class="token punctuation">,</span> BTNode <span class="token operator">*</span>rn<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    BTNode <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token punctuation">(</span>BTNode<span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>BTNode<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//分配内存空间 </span>
+    p<span class="token operator">-></span>element <span class="token operator">=</span> x<span class="token punctuation">;</span>                             
+    p<span class="token operator">-></span>lChild <span class="token operator">=</span> ln<span class="token punctuation">;</span>                                
+    p<span class="token operator">-></span>rChild <span class="token operator">=</span> rn<span class="token punctuation">;</span>   
+    <span class="token keyword">return</span> p<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="返回根节点的值"><a href="#返回根节点的值" class="headerlink" title="返回根节点的值"></a>返回根节点的值</h3><pre class="line-numbers language-c" data-language="c"><code class="language-c">BOOL <span class="token function">Root</span><span class="token punctuation">(</span>BinaryTree <span class="token operator">*</span>bt<span class="token punctuation">,</span> ElemType <span class="token operator">*</span>x<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>bt<span class="token operator">-></span>root<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        x <span class="token operator">=</span> <span class="token operator">&amp;</span>bt<span class="token operator">-></span>root<span class="token operator">-></span>element<span class="token punctuation">;</span>
+        
+        <span class="token keyword">return</span> TRUE<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">else</span>
+        <span class="token keyword">return</span> FALSE<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="构建二叉树"><a href="#构建二叉树" class="headerlink" title="构建二叉树"></a>构建二叉树</h3><p>也就是调用NewNode的完整过程。</p>
+<p>尤其要注意最后一行的<strong>left-&gt;root = right-&gt;root = NULL</strong>。</p>
+<blockquote>
+<p>书上的解释是，如果不让left和right成为空树，则左右子树会和新二叉树共享二叉树结点，然后就很危险，这真是什么也没说清楚，乌鱼子。</p>
+</blockquote>
+<p>解释一下，这是因为left和right本身也是一个独立的二叉树，原本各有一个根结点指针。合并成新二叉树的子树后，原本的入口就要关闭，只能允许它们的父结点指向自己。不然，程序通过原本left或者right自己的根指针就可以修改里面的数据，而我们希望的是只能从新的树的根结点进入。</p>
+<p>为什么成为空树就可以解决这个问题呢？不应该讲 “成为空树”，而是把原本的树的根指针设空，使这两个子树<strong>不可以作为独立的树被访问</strong>。</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">MakeTree</span><span class="token punctuation">(</span>BinaryTree <span class="token operator">*</span>bt<span class="token punctuation">,</span> ElemType e<span class="token punctuation">,</span> BinaryTree <span class="token operator">*</span>left<span class="token punctuation">,</span> BinaryTree <span class="token operator">*</span>right<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>bt<span class="token operator">-></span>root <span class="token operator">||</span> left <span class="token operator">==</span> right<span class="token punctuation">)</span>    <span class="token comment">//根节点不能为空，左右子树不可以是同一个子树</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>    
+    bt<span class="token operator">-></span>root <span class="token operator">=</span> <span class="token function">NewNode</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span> left<span class="token operator">-></span>root<span class="token punctuation">,</span> right<span class="token operator">-></span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    left<span class="token operator">-></span>root <span class="token operator">=</span> right<span class="token operator">-></span>root <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span> <span class="token comment">//取消原树的指针</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="先序遍历（递归）"><a href="#先序遍历（递归）" class="headerlink" title="先序遍历（递归）"></a>先序遍历（递归）</h3><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">PreOrderTree</span><span class="token punctuation">(</span>BinaryTree <span class="token operator">*</span>bt<span class="token punctuation">)</span>     <span class="token comment">//用户接口</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token function">PreOrder</span><span class="token punctuation">(</span>bt<span class="token operator">-></span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>             
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">void</span> <span class="token function">PreOrder</span><span class="token punctuation">(</span>BTNode <span class="token operator">*</span>t<span class="token punctuation">)</span>              <span class="token comment">//程序接口</span>
+<span class="token punctuation">&#123;</span> 
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>t<span class="token punctuation">)</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c"</span><span class="token punctuation">,</span> t<span class="token operator">-></span>element<span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">//这一行放在最前面：先序；放中间：中序；放最后：后序；</span>
+    <span class="token function">PreOrder</span><span class="token punctuation">(</span>t<span class="token operator">-></span>lChild<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">PreOrder</span><span class="token punctuation">(</span>t<span class="token operator">-></span>rChild<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="有趣的题型"><a href="#有趣的题型" class="headerlink" title="有趣的题型"></a>有趣的题型</h3><p><strong>性质：已知二叉树的先序序列和中序序列，或后序序列和中序序列，可以唯一确定一颗二叉树。</strong></p>
+<p>以已知先序序列和中序序列的情况为例，算法实现步骤如下：</p>
+<p>1）根据先序序列确定树的根结点</p>
+<p>2）根据根结点在中序序列中的位置划分出二叉树的左右子树包含哪些结点。</p>
+<p>  然后根据左、右字数结点在先序序列中的次序可以确定子树的根结点，即回到步骤 1）。</p>
+]]></content>
+      <categories>
+        <category>C语言</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>二叉树的基本性质</title>
+    <url>/2021/04/03/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8/</url>
+    <content><![CDATA[<p>二叉树很常用，怕自己记不住，对它的基本性质和运算做一个梳理。</p>
+<a id="more"></a>
+
+<h3 id="基本性质"><a href="#基本性质" class="headerlink" title="基本性质"></a>基本性质</h3><p><strong>1.二叉树的第 i ( i  $\geq$ 1)层上最多有 $2^{i-1}$个结点。</strong></p>
+<blockquote>
+<p>第一层一个结点。每个结点最多两个孩子，因此下一行结点数最多是上一行的2倍。</p>
+</blockquote>
+<p><strong>2.高度为 h 的二叉树上至多有$2^h-1$ 个结点。</strong></p>
+<p>也就是每层结点都达到最多，等比数列求和:$$\sum^{h}_{i=1}{2^{i-1}}=2^h-1 $$</p>
+<p><strong>3.包含 n 个结点的二叉树的高度至少为$\lceil\log_2{(n+1)} \rceil$，至多为n。</strong></p>
+<blockquote>
+<p>高度最小时，每层的结点都达到最多，设层数为h，则$2^h-1=n$ ，解得 $h=log_2{(n+1)}$ </p>
+<p>由于h必须是整数，而$log_2{(n+1)}$ 不一定是整数，所以h还需向上取整。</p>
+<p>高度最大时，每层只有一个结点，高度就为n.</p>
+</blockquote>
+<p><strong>4.任意一颗二叉树中，若叶子结点的数量为$n_0$，度为2的结点数量为$n_2$，则$n_0$=$n_2+1$.</strong></p>
+<blockquote>
+<p>推理过程：</p>
+<p>二叉树仅包含度为0，1，2的三种结点。设二叉树总结点数为n，度为0个数$n_0$, 度为1个数$n_1$，度为2个数$n_2$，则有 $n=n_0+n_1+n_2$. 设二叉树边的数量为B，由于除了根结点，每个结点都有一条边进入，因此$B=n-1$.</p>
+<p>同时，度为1的结点发出1条边，度为2的结点发出2条边，还有$B=n_1+2n_2$.两式联立得$n=n_1+2n_2+1$.</p>
+<p>而前面得出$n=n_0+n_1+n_2$，消去n，就是$n_0$=$n_2+1$.</p>
+</blockquote>
+<h3 id="几种特殊二叉树"><a href="#几种特殊二叉树" class="headerlink" title="几种特殊二叉树"></a>几种特殊二叉树</h3><h4 id="满二叉树"><a href="#满二叉树" class="headerlink" title="满二叉树"></a>满二叉树</h4> <center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="http://data.biancheng.net/uploads/allimg/181226/2-1Q226195949495.gif">
+    <br>
+    <div style="color:orange;display: inline-block;color: #999;font-size:14px;
+    padding: 1px;">图1 满二叉树</div>
+</center>                                                                     
+
+<p>如果一个二叉树中除了叶子结点，每个结点的度都为 2，则此二叉树称为满二叉树。</p>
+<p>结合基本性质，满二叉树的第 i ( i  $\geq$ 1)层上有 $2^{i-1}$个结点，高度为 h 的满二叉树上有$2^h-1$ 个结点。</p>
+<h4 id="完全二叉树"><a href="#完全二叉树" class="headerlink" title="完全二叉树"></a>完全二叉树</h4><p>如果一个二叉树除去最后一层节点后为满二叉树，且最后一层的结点依次从左到右分布，则此二叉树被称为完全二叉树。</p>
+ <center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="http://data.biancheng.net/uploads/allimg/181226/2-1Q22620003J18.gif">
+    <br>
+    <div style="color:orange;display: inline-block;color: #999;font-size:14px;
+    padding: 1px;">图2 完全和非完全二叉树比较</div>
+</center>                                                                     
+**性质**
+
+<ol>
+<li>含有n 个结点的完全二叉树的深度为 $\lceil\log_2{(n+1)} \rceil$；</li>
+<li>将一个包含n个结点的完全二叉树按照层次从左到右 ，从1到 i 依次给结点编号，对于任意一个结点 i ，完全二叉树还有以下几个结论成立：</li>
+</ol>
+<p>​     1）当 i &gt; 1 时，该结点父结点编号为 $\lfloor \frac{i}{2} \rfloor$ 。（i = 1 时，表示的是根结点，无父结点） </p>
+<p>​     2）如果 2i &gt; n ，则结点 i 肯定没有左孩子；否则其左孩子结点编号为2i 。</p>
+<p>​     3）如果 2<em>i+1&gt;n ，</em>则结点 i 肯定没有右孩子；否则右孩子结点编号为 2i+1 。</p>
+<blockquote>
+<p>课本是从0到 i-1 编号的，由于没找到对应的图，这里采用从1到 i 编号。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>C语言</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>二次积分转化极坐标形式</title>
+    <url>/2021/04/11/%E4%BA%8C%E6%AC%A1%E7%A7%AF%E5%88%86%E8%BD%AC%E5%8C%96%E6%9E%81%E5%9D%90%E6%A0%87%E5%BD%A2%E5%BC%8F/</url>
+    <content><![CDATA[<blockquote>
+<p>原作者：知乎@tetradecane</p>
+<p>原文链接：<a href="https://www.zhihu.com/question/318356624/answer/660569709">https://www.zhihu.com/question/318356624/answer/660569709</a></p>
+</blockquote>
+<p>问题：将$\int ^1_0{\rm d}x\int ^{x^2}_0 f(x,y) {\rm d}y$化为极坐标形式的二次积分.</p>
+<p>关键在于积分区域如何用极坐标表达，也就是找出积分上下限。</p>
+<p>我们先固定$\theta$，显然$0\leq\theta\leq\frac{\pi}{4}$，现在看看对于某个$\theta$的$\rho$的变化范围：</p>
+<p><img src="https://pic4.zhimg.com/80/v2-61b515cc0ebe7a3ac5e6970c968b86b9_720w.jpg?source=1940ef5c" loading="lazy"></p>
+<p>这根过原点的射线与$y=x^2$和$x=1$有交点，这两段射线的长度是$\rho$长度的上下限，所以关键在于求出这两个交点的极坐标表示形式。</p>
+<p>我们代入$x=\rho$$cos\theta$  ，$y=\rho$$sin\theta$  ，就得到了$\rho$$sin\theta=$$\rho^2$$cos^2\theta$和$\rho$$cos\theta=1$，解出交点为$\rho=$$\frac{sin\theta}{cos^2\theta}$</p>
+<p>和$\rho=$$\frac{1}{cos\theta}$，也就是对$\rho$的积分上下限.$\frac{sin\theta}{cos^2\theta}\leq\rho\leq\frac{1}{cos\theta}$，那么原式$=\int ^\frac{\pi}{4}_0{\rm d}\theta\int ^{\frac{1}{cos\theta}}_\frac{sin\theta}{cos^2\theta} f(\rho cos\theta,\rho sin\theta)\rho {\rm d}\rho$</p>
+]]></content>
+      <categories>
+        <category>课内</category>
+      </categories>
+      <tags>
+        <tag>高等数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>二级指针（转载）</title>
+    <url>/2021/05/22/%E4%BA%8C%E7%BA%A7%E6%8C%87%E9%92%88/</url>
+    <content><![CDATA[<p>做题时候碰到，感觉很有意思</p>
+<a id="more"></a>
+
+<h3 id="什么是二级指针"><a href="#什么是二级指针" class="headerlink" title="什么是二级指针"></a>什么是二级指针</h3><p>一级指针存放变量的地址，指向的值是变量的内容。如int* p={1,2,3}， p=数组的首地址，p=数组的第一个值；    二级指针存放一级指针的地址，指向一级指针。如int *p ={1,2,3}， int  ** pp=&amp;p，则pp=指针p的首地址，*pp=数组的首地址，**pp=数组第一个值1。     </p>
+<p>那么，在作为参数传递时什么时候用一级指针，什么时候用二级指针？</p>
+<h3 id="二级指针的应用"><a href="#二级指针的应用" class="headerlink" title="二级指针的应用"></a>二级指针的应用</h3><p>用二级指针作为函数参数，有两种典型情况：<br><strong>1.需要传递一级指针的数组时：</strong><br>例如，标准C的main函数：<br>int main(int argc, char*[] argv)，数组最高维可以退化，char*[] argv等价于char** argv。这里argv代表命令行参数数组。<br><strong>2.需要对传入的一级指针进行修改时：</strong><br>例如：</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">alloc_new_char_array</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span>t<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+ <span class="token operator">*</span>t <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">char</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span>n <span class="token operator">*</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这里可以通过返回值达到相同的效果，不过需要同时修改多个指针的时候就不能用返回值了。另外，C++中可以用引用代替，本质上和这里的修改指针的方法相同。</p>
+<p>类似地，一级指针作为参数则用来传递非指针数组，以及对非指针对象进行修改。</p>
+<hr>
+<p>指针数组的数组名传递参数对应为指针的指针，即二级指针，二维数组的数组名传递参数对应为数组指针，即指向一维数组的指针。</p>
+<p>一级指针通过形参，可以修改实参中指针所指向的地址中的值，修改不了实参中指针所指向的地址，需要借助二级指针才可以。</p>
+<p> <strong>简而言之，二级指针调用，传递的是一级指针的地址。</strong></p>
+]]></content>
+      <categories>
+        <category>C语言</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>作文素材（日更）</title>
+    <url>/2021/04/10/%E4%BD%9C%E6%96%87%E7%B4%A0%E6%9D%90/</url>
+    <content><![CDATA[<p> 随手记下遇到的好的表达，也是不希望它们是我这辈子最后一次见到。</p>
+<p>不是很严格的素材本~</p>
+<a id="more"></a>
+
+<h3 id="4-10"><a href="#4-10" class="headerlink" title="4.10"></a>4.10</h3><p>1.We have to <strong>gear our lives to</strong> the new changes.</p>
+<p>我们必须使自己适应新的变化。</p>
+<p>be geared up for sth 为某事做好准备</p>
+<p>2.<strong>at the expense of   牺牲；以……为代价</strong></p>
+<p>Don’t stress minor issues at the expense of the central task.</p>
+<p>不要因为次要问题而冲淡了中心任务。</p>
+<p>3.These two beliefs are mutually <strong>exclusive</strong>.</p>
+<p>这两种信念是相互排斥的。</p>
+]]></content>
+      <categories>
+        <category>课内</category>
+      </categories>
+      <tags>
+        <tag>英语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>六级听力技巧</title>
+    <url>/2021/04/08/%E5%90%AC%E5%8A%9B%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[<p>我的听力太拉了，太拉了……</p>
+<p>有点技巧，总比没有好。</p>
+<a id="more"></a>
+
+<p>按着知乎上的建议，还有点用，简要整理一下。</p>
+<p>六级听力有三种题型：长对话，短文，讲座。</p>
+<h3 id="长对话"><a href="#长对话" class="headerlink" title="长对话"></a>长对话</h3><p>3 - 4个小题，一般均匀地分布在对话的每个回合，极少出现一个回合包含两个考点的情况。所以，在一个回合的对话中发现考点后，该回合剩余部分可稍作放松。</p>
+<p>考点位置多在一段话的开头或结尾。</p>
+<p>Tips：</p>
+<ol>
+<li>更多单词或短语被读到的选项是正确选项；</li>
+<li>正确选项常包含原文的同义词替换；</li>
+<li>第一题常对应原文第一句或对话的第一回合；</li>
+<li>顺序出题。最好边听边做，不等问题；</li>
+<li>分清对话问答双方，考点多出于答方。</li>
+</ol>
+<h3 id="短文"><a href="#短文" class="headerlink" title="短文"></a>短文</h3><p>1.预测主题，区分文体，抓关键信息；</p>
+<p>2.捕捉每段开头第一句话；</p>
+<p>3.逻辑词、转折词后常设考点；</p>
+<p>4.听到什么不一定选什么，注意同义替换词。</p>
+<h3 id="讲座"><a href="#讲座" class="headerlink" title="讲座"></a>讲座</h3><p>1.出题点<strong>均匀分布</strong>，题目顺序和讲座文章顺序通常一致；</p>
+<p>2.同义替换较少，在不是只听到个别词的情况下，听到什么选什么的概率较大。</p>
+<p>其他技巧类似于短文。</p>
+]]></content>
+      <categories>
+        <category>课内</category>
+      </categories>
+      <tags>
+        <tag>英语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>单链表</title>
+    <url>/2021/04/06/%E5%8D%95%E9%93%BE%E8%A1%A8/</url>
+    <content><![CDATA[<p>老是碰见链表……决定还是写一下，方便复习。</p>
+<p>从单链表写起。</p>
+<a id="more"></a>
+
+<h3 id="单链表的定义"><a href="#单链表的定义" class="headerlink" title="单链表的定义"></a>单链表的定义</h3><p>头指针*first：指向头结点。若单链表中没有数据元素，则头指针的值为NULL。</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">node</span>
+<span class="token punctuation">&#123;</span>
+   ElemType element<span class="token punctuation">;</span>            <span class="token comment">//结点数据域</span>
+   <span class="token keyword">struct</span> <span class="token class-name">node</span> <span class="token operator">*</span>Link<span class="token punctuation">;</span>           <span class="token comment">//结点指针域</span>
+<span class="token punctuation">&#125;</span>Node<span class="token punctuation">;</span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">singleList</span>
+<span class="token punctuation">&#123;</span>
+   Node <span class="token operator">*</span>first<span class="token punctuation">;</span>                 <span class="token comment">//头指针，后面会用来指向a0                 </span>
+   <span class="token keyword">int</span> n<span class="token punctuation">;</span>                       <span class="token comment">//单链表中元素个数</span>
+<span class="token punctuation">&#125;</span>SingleList<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="单链表的运算"><a href="#单链表的运算" class="headerlink" title="单链表的运算"></a>单链表的运算</h3><h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c">status <span class="token function">Init</span><span class="token punctuation">(</span>Singlist <span class="token operator">*</span>L<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+  L<span class="token operator">-></span>first <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+  L<span class="token operator">-></span>n <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> OK；
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h4><p>单链表没有随机存取元素的特性，因此得从头结点开始逐个查找。</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">Status <span class="token function">Find</span><span class="token punctuation">(</span>SingleList L<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">,</span> ElemType <span class="token operator">*</span>x<span class="token punctuation">)</span>     <span class="token comment">//*x，接收返回值</span>
+<span class="token punctuation">&#123;</span>
+   Node <span class="token operator">*</span>p<span class="token punctuation">;</span>                 <span class="token comment">//临时结点，遍历时需用到</span>
+   <span class="token keyword">int</span> j<span class="token punctuation">;</span>
+   <span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">||</span>i <span class="token operator">></span> L<span class="token punctuation">.</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>    <span class="token comment">//越界判断</span>
+      <span class="token keyword">return</span> ERROR<span class="token punctuation">;</span>
+   p <span class="token operator">=</span> L<span class="token punctuation">.</span>first<span class="token punctuation">;</span>
+   <span class="token keyword">for</span><span class="token punctuation">(</span>j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>j <span class="token operator">&lt;</span> i<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>   
+      p <span class="token operator">=</span> p<span class="token operator">-></span>Link<span class="token punctuation">;</span>          <span class="token comment">//找到第i个元素，转化为指针向后移动i次</span>
+   <span class="token operator">*</span>x <span class="token operator">=</span> p<span class="token operator">-></span>element<span class="token punctuation">;</span>         <span class="token comment">//通过地址传值</span>
+   <span class="token keyword">return</span> OK<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="插入（重要）"><a href="#插入（重要）" class="headerlink" title="插入（重要）"></a>插入（重要）</h4><p>本程序是插入在$a_i$之后。原理：生成新节点，并指向$a_i$的下一个元素，再让$a_i$指向它。</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">Status <span class="token function">Insert</span><span class="token punctuation">(</span>SingleList <span class="token operator">*</span>L<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">,</span> ElemType x<span class="token punctuation">)</span>   <span class="token comment">//将值为x的结点插入在第i个结点后</span>
+<span class="token punctuation">&#123;</span>
+   Node <span class="token operator">*</span>p<span class="token punctuation">,</span> <span class="token operator">*</span>q<span class="token punctuation">;</span>                     <span class="token comment">//都是指针类型，只有指针才可以移动</span>
+   <span class="token keyword">int</span> j<span class="token punctuation">;</span>
+   <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">&lt;</span><span class="token operator">-</span><span class="token number">1</span><span class="token operator">||</span>i<span class="token operator">></span>L<span class="token operator">-></span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+     <span class="token keyword">return</span> ERROR<span class="token punctuation">;</span> 
+   p <span class="token operator">=</span> L<span class="token operator">-></span>first<span class="token punctuation">;</span>                    <span class="token comment">//p从头结点开始遍历              </span>
+   <span class="token keyword">for</span><span class="token punctuation">(</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> j<span class="token operator">&lt;</span>i<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+     p <span class="token operator">=</span> p<span class="token operator">-></span>link<span class="token punctuation">;</span>                   <span class="token comment">//指针运行到ai的位置(p指向i-1的下一个结点)</span>
+   q <span class="token operator">=</span> <span class="token punctuation">(</span>Node<span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//生成新节点q</span>
+   q<span class="token operator">-></span>element <span class="token operator">=</span> x<span class="token punctuation">;</span>                  <span class="token comment">//将x赋值给结点q</span>
+   <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">></span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>                         
+   <span class="token punctuation">&#123;</span>
+     q<span class="token operator">-></span>link <span class="token operator">=</span> p<span class="token operator">-></span>link<span class="token punctuation">;</span>             <span class="token comment">//这两步很关键！！必须先把结点p存的下一个元素的地址给q</span>
+     p<span class="token operator">-></span>link <span class="token operator">=</span> q<span class="token punctuation">;</span>                   <span class="token comment">//再把结点p存的下一个元素的地址改为q的地址</span>
+   <span class="token punctuation">&#125;</span>                                <span class="token comment">//这样链表就接上了</span>
+   <span class="token keyword">else</span>
+   <span class="token punctuation">&#123;</span>
+     q<span class="token operator">-></span>link <span class="token operator">=</span> L<span class="token operator">-></span>first<span class="token punctuation">;</span>            <span class="token comment">//要插入的元素是第一个，先让q存的下一个元素的地址和头指针一样，指向第一个结点</span>
+     L<span class="token operator">-></span> first <span class="token operator">=</span> q<span class="token punctuation">;</span>                 <span class="token comment">//再让头指针指向q</span>
+   <span class="token punctuation">&#125;</span>
+   L<span class="token operator">-></span>n<span class="token operator">++</span><span class="token punctuation">;</span>                          <span class="token comment">//不忘表长+1</span>
+   <span class="token keyword">return</span> OK<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="删除（重要）"><a href="#删除（重要）" class="headerlink" title="删除（重要）"></a>删除（重要）</h4><p>删除结点$a_i$。原理：让指针指向结点$a_{i+1}$，跳过$a_i$，再释放该结点空间。</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">Status <span class="token function">Delete</span><span class="token punctuation">(</span>SingleList <span class="token operator">*</span>L<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> j<span class="token punctuation">;</span>
+    Node <span class="token operator">*</span>p<span class="token punctuation">,</span> <span class="token operator">*</span>q<span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>L<span class="token operator">-></span>n<span class="token punctuation">)</span>                        <span class="token comment">//判断链表是否为空</span>
+        <span class="token keyword">return</span> ERROR<span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span> i <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">||</span>i <span class="token operator">></span> L<span class="token operator">-></span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> ERROR<span class="token punctuation">;</span>
+    q <span class="token operator">=</span> L<span class="token operator">-></span> first<span class="token punctuation">;</span>                   <span class="token comment">//开p和q两个头~</span>
+    p <span class="token operator">=</span> L<span class="token operator">-></span> first<span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span>j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>j <span class="token operator">&lt;</span> i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+        q <span class="token operator">=</span> q<span class="token operator">-></span>link<span class="token punctuation">;</span>                 <span class="token comment">//注意，最终q指向ai前一个元素</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span>
+        L<span class="token operator">-></span>first <span class="token operator">=</span> L<span class="token operator">-></span>first<span class="token operator">-></span>link<span class="token punctuation">;</span>   <span class="token comment">//删除头结点，也就是让头指针指向头结点下一个元素</span>
+    <span class="token keyword">else</span><span class="token punctuation">&#123;</span>
+        p <span class="token operator">=</span> q<span class="token operator">-></span>link<span class="token punctuation">;</span>                 <span class="token comment">//先让p指向ai</span>
+        q<span class="token operator">-></span>link <span class="token operator">=</span> p<span class="token operator">-></span>link<span class="token punctuation">;</span>           <span class="token comment">//再让q指向p的下一个结点（a_i+1）,使ai被跳过</span>
+    <span class="token punctuation">&#125;</span>                                <span class="token comment">//这两行的顺序很重要</span>
+    <span class="token function">free</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    L<span class="token operator">-></span>n<span class="token operator">--</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> OK<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c">Status <span class="token function">Output</span><span class="token punctuation">(</span>SingleList <span class="token operator">*</span>L<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    Node <span class="token operator">*</span>p<span class="token punctuation">;</span>   
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>L<span class="token operator">-></span>n<span class="token punctuation">)</span>                         <span class="token comment">//判断链表是否为空</span>
+        <span class="token keyword">return</span> ERROR<span class="token punctuation">;</span>   
+    p <span class="token operator">=</span> L<span class="token operator">-></span>first<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d "</span><span class="token punctuation">,</span> p<span class="token operator">-></span>element<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">//打印该结点的元素</span>
+        p <span class="token operator">=</span> p<span class="token operator">-></span>link<span class="token punctuation">;</span>                  <span class="token comment">//指针移向下一个结点</span>
+    <span class="token punctuation">&#125;</span>   
+    <span class="token keyword">return</span> OK<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h4><p>释放链表所占空间，防止内存泄漏。</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">Destroy</span><span class="token punctuation">(</span>SingleList <span class="token operator">*</span>L<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    Node <span class="token operator">*</span>p<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>L<span class="token operator">-></span>first<span class="token punctuation">)</span>                  <span class="token comment">//结点不为空时</span>
+    <span class="token punctuation">&#123;</span>
+        p <span class="token operator">=</span> L<span class="token operator">-></span>first<span class="token operator">-></span>link<span class="token punctuation">;</span>          <span class="token comment">//保存后继结点地址，防止断链</span>
+        <span class="token function">free</span><span class="token punctuation">(</span>L<span class="token operator">-></span>first<span class="token punctuation">)</span><span class="token punctuation">;</span>              <span class="token comment">//释放头结点占的空间</span>
+        L<span class="token operator">-></span>first <span class="token operator">=</span> p<span class="token punctuation">;</span>                <span class="token comment">//移向下一个结点，继续循环</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>C语言</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>期中复习计划</title>
+    <url>/2021/04/10/%E5%A4%8D%E4%B9%A0%E8%AE%A1%E5%88%92/</url>
+    <content><![CDATA[<p>快期中考了。</p>
+<a id="more"></a>
+
+<h3 id="大物"><a href="#大物" class="headerlink" title="大物"></a><strong>大物</strong></h3><p>1.公式记牢；</p>
+<p>2.本周末将练习册上的错题过一遍；</p>
+<p>3.看上课的PPT上的例题，再自己做一遍;</p>
+<p>4.做习题分析上的题+买卷子做（待定）；</p>
+<h3 id="高数"><a href="#高数" class="headerlink" title="高数"></a>高数</h3><p>1.刷书后习题；单独写在纸上，不要写在书上；</p>
+<p>2.练习册不会的题重做；</p>
+<p>3.本周末把上课的ppt重看；</p>
+<p>4.期中考前尽量做到ppt上例题每题过一遍，书后习题做一遍;</p>
+<p>5.买卷子做（待定）；</p>
+<h3 id="六级"><a href="#六级" class="headerlink" title="六级"></a>六级</h3><p>1.墨墨背单词，每天50（包括复习）；</p>
+<p>2.听力，每天2-3篇，错题重听；</p>
+<p>3.积累作文表达，每天3句，写到博客里；</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>指针数组与数组指针(转载)</title>
+    <url>/2021/05/23/%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84%E4%B8%8E%E6%95%B0%E7%BB%84%E6%8C%87%E9%92%88-%E8%BD%AC%E8%BD%BD/</url>
+    <content><![CDATA[<p>这两个东西有区别，固然。但是，写起来真的区别不大……做题不能靠蒙，我还是搬运一下。</p>
+<a id="more"></a>
+
+<blockquote>
+<p>原文：<a href="https://blog.csdn.net/as480133937/article/details/92122982">https://blog.csdn.net/as480133937/article/details/92122982</a></p>
+</blockquote>
+<h3 id="区分"><a href="#区分" class="headerlink" title="区分"></a>区分</h3><p>首先我们需要了解什么是数组指针以及什么是指针数组，如下：</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> <span class="token operator">*</span>p<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>      <span class="token comment">//指针数组</span>
+<span class="token keyword">int</span> <span class="token punctuation">(</span><span class="token operator">*</span>p<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>    <span class="token comment">//数组指针</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>数组指针的意思即为<strong>通过指针引用数组</strong>，p先和*结合，说明了p是一个指针变量，指向一个大小为5的数组，也就是数组指针的中括号只代表指向的数组的大小，不代表自身的大小。所以，*<em>int (\</em>p)[5]**即为一个数组指针。</p>
+<p>*<em>int \</em>p[5]**则是一个大小为5且存放整型指针的数组。</p>
+<p>区别还是很明显的：数组指针指向数组，本质是指针；指针数组存放指针，本质是数组。</p>
+<h3 id="指针数组"><a href="#指针数组" class="headerlink" title="指针数组"></a>指针数组</h3><p>C语言中，指针数组其实不一定要在定义时给出长度。指针可以直接拿来当数组使用，如：</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"hello world"</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token operator">*</span>p<span class="token punctuation">;</span>
+p <span class="token operator">=</span> a<span class="token punctuation">;</span>
+<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c"</span><span class="token punctuation">,</span> <span class="token operator">*</span>p<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//p可以进行自增操作，但如果是a++就会报错，因为a是地址常量。这也是用指针的好处</span>
+<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c"</span><span class="token punctuation">,</span> p<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//利用数组形式输出</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>可见，当指针被用来指向某数组的首地址时，它可以直接按数组格式使用，写成类似于p[n]的格式。</p>
+<h3 id="数组指针"><a href="#数组指针" class="headerlink" title="数组指针"></a>数组指针</h3><p>介绍指向一维数组和二维数组的指针,它们在定义上有区别。</p>
+<h4 id="一维数组指针"><a href="#一维数组指针" class="headerlink" title="一维数组指针"></a>一维数组指针</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> <span class="token punctuation">(</span><span class="token operator">*</span>p<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment">//定义数组指针</span>
+<span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>     <span class="token comment">//定义一维数组</span>
+p <span class="token operator">=</span> <span class="token operator">&amp;</span>a<span class="token punctuation">;</span>       <span class="token comment">//需要&amp;符!!!!!!!!!!</span>
+<span class="token comment">//p = a; 这样是错误的</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="二维数组指针"><a href="#二维数组指针" class="headerlink" title="二维数组指针"></a>二维数组指针</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> <span class="token punctuation">(</span><span class="token operator">*</span>p<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>   <span class="token comment">//指向一个数组，数组有3个元素，每个元素是一个int型整数</span>
+<span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+p<span class="token operator">=</span> a<span class="token punctuation">;</span>          <span class="token comment">//将该二维数组的首地址赋给p，也就是a[0]或&amp;a[0][0]</span>
+p<span class="token operator">++</span><span class="token punctuation">;</span>           <span class="token comment">//该语句执行过后，也就是p=p+1;p跨过行a[0][]指向了行a[1][]</span>
+<span class="token comment">//p = &amp;a; 这样是错误的，和一维数组正相反！！</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>一维数组赋值要加上&amp;，原因是 p 本质是一个指向整个数组的指针 ，&amp;a 代表的是整个数组的首地址，指向了整个数组 。    </p>
+<p>而 a 代表的是数组<strong>首个元素的地址</strong>，是一个单纯的地址  (虽然&amp;a 与a在数值上相同) 。在C语言中，赋值符号“=”号两边的数据类型必须是相同的，p = &a; 是将整个数组的首地址赋值给p，而 p = a则是将一个指针赋值给p，这样是错误的。</p>
+<p>同理，如果是二维数组，<strong>a则直接表示一个一维数组的首地址a[ ][3]</strong> ，而&amp;a 则表示一个二维数组的首地址 ，p需要的值是一维数组的首地址。所以赋值会出现错误。</p>
+</blockquote>
+<p>二维数组指针也可以在定义时直接赋值：</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token punctuation">(</span><span class="token operator">*</span>p<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token operator">=</span>a<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>（还有一些知识点，后续待补充）</p>
+]]></content>
+      <categories>
+        <category>C语言</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>生词本（鸽了）</title>
+    <url>/2021/04/22/%E7%94%9F%E8%AF%8D%E6%9C%AC/</url>
+    <content><![CDATA[<h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>每天积累词和词组，以证明每天都有看英语。没有量的要求。</p>
+<p>我能坚持多少天呢？</p>
+<h3 id="4-22"><a href="#4-22" class="headerlink" title="4.22"></a>4.22</h3><ol>
+<li><p>thumb through    翻阅</p>
+</li>
+<li><p>come upon   突然发现</p>
+</li>
+<li><p>come by   路过</p>
+</li>
+<li><p>fire off   射击，不停提问</p>
+</li>
+<li><p>lay off   解雇</p>
+</li>
+<li><p>lay down   躺下，放下</p>
+</li>
+<li><p>in effect = in fact  实际上</p>
+</li>
+<li><p>in question  考虑之中的，被谈论的</p>
+</li>
+<li><p>in order that  为了</p>
+</li>
+<li><p>so as that   只要</p>
+</li>
+<li><p>elaborate  vi.详尽说明；vt.详细制定；adj.复杂的，精心制作的</p>
+</li>
+</ol>
+<p>​     · elaborate on sth</p>
+<p>​      elaboration  n.精心制作;详细阐述</p>
+<ol start="12">
+<li>retreat  撤退</li>
+<li>dismissal  解雇，免职，开除</li>
+<li>elighten  启蒙   glisten 闪亮  illuminate 照亮</li>
+<li>-Would you mind……？ -Not at all.</li>
+<li>punctual 准时的</li>
+<li>recollection 回忆，记忆    memorization 记诵，暗记</li>
+<li>object to sth/<strong>sb doing</strong>   反对……</li>
+<li>of no avail  无效，不起作用</li>
+</ol>
+<p>​        avail of sth 利用</p>
+<p>​        avail sb 对某人起作用</p>
+<ol start="20">
+<li>utilize 利用</li>
+</ol>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>稀疏矩阵的快速转置算法</title>
+    <url>/2021/04/01/%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5/</url>
+    <content><![CDATA[<p>问就是终于搞懂了一点。</p>
+<p>现学现卖~</p>
+<a id="more"></a>
+
+<h3 id="稀疏矩阵的定义"><a href="#稀疏矩阵的定义" class="headerlink" title="稀疏矩阵的定义"></a>稀疏矩阵的定义</h3><p>（抄书）矩阵中非零元素占元素总数的比例称为矩阵的稠密度。稠密度很小，即包含大量非零元素的矩阵为稀疏矩阵。通常<strong>稠密度小于5%可视为稀疏矩阵</strong>。稀疏矩阵中零元素的分布位置没有规律。</p>
+<p>为节省空间，我们用<strong>三元组表</strong>，只存储其中的非零元素。行优先——行三元组表，列优先——列三元组表。</p>
+<p>矩阵的转置即行列互换。</p>
+<p><img src="https://img.rruu.net/image/606597f5eb229" loading="lazy"></p>
+<p>（抄书）给出三元组表的c语言定义，后面要用到。</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">maxSize</span> <span class="token expression"><span class="token number">10000</span>     </span><span class="token comment">//根据需要定义</span></span>
+<span class="token keyword">typedef</span> <span class="token keyword">int</span> ElemType      <span class="token comment">//根据需要定义</span>
+    
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">term</span><span class="token punctuation">&#123;</span>      <span class="token comment">//一个非零元素的信息</span>
+    <span class="token keyword">int</span> col<span class="token punctuation">,</span> row<span class="token punctuation">;</span>         <span class="token comment">//col列下标，row行下标</span>
+    ElemType value<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>Term<span class="token punctuation">;</span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">spasematrix</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> m<span class="token punctuation">,</span> n<span class="token punctuation">,</span> t<span class="token punctuation">;</span>          <span class="token comment">//m稀疏矩阵行数，n稀疏矩阵列数，t为非零元素个数，也就是三元组表的行数</span>
+    Term table<span class="token punctuation">[</span>maxSize<span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment">//长度为maxSize的非零元素数组</span>
+<span class="token punctuation">&#125;</span>Spasematrix<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="稀疏矩阵的快速转置"><a href="#稀疏矩阵的快速转置" class="headerlink" title="稀疏矩阵的快速转置"></a>稀疏矩阵的快速转置</h3><p>典型的以空间代价换取时间代价的算法，时间复杂度O(n+t)。</p>
+<p>中心思想：将<strong>行三元组表</strong>中的元素取出，直接放到它在<strong>列三元组表</strong>中正确的位置。</p>
+<p>如何找这个正确的位置？我们需要构建两个一维数组指挥此过程：<strong>num和k</strong>。</p>
+<p><strong>数组num：统计原稀疏矩阵中每一列的非零元素个数。</strong>易知，扫描一次行三元组表即可得出。时间复杂度为O(n+t). 操作如下：</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">Spasematrix A<span class="token punctuation">;</span>                <span class="token comment">//待转置矩阵</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>    <span class="token comment">//n是稀疏矩阵的列数</span>
+  num<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>                 <span class="token comment">//num[j]代表第j列非零元素的个数，这里先初始化</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> t <span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>   <span class="token comment">//t是矩阵中非零元素个数</span>
+  num<span class="token punctuation">[</span>A<span class="token punctuation">.</span>table<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>col<span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>      <span class="token comment">//访问第i个非零元素的列下标，此列下标的num加1</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://img.rruu.net/image/6065dbe5890d7" loading="lazy"></p>
+<p><strong>数组k：k[ j ]表示稀疏矩阵中列号从 0 到 j - 1 的非零元素个数总和</strong>，也就是num[0]到num[ j-1]的和，算出的是<strong>第 j 列第一个非零元素前面到底有几个非零元素</strong>，此数值也正好就是它<strong>在转置后的三元组表中的位置</strong>（行号）。</p>
+<p>这样就好办了，<strong>根据列号就能直接找到位置</strong>：把第 j 列第一个非零元素填到三元组表第k[ j ]行去。<strong>注意k[ j ]被访问后需要加1，成为同一列下一个非零元素的位置</strong>，也就是第 j 列第二个非零元素将在三元组表第k[ j ]+1行。</p>
+<p>计算数组k的时间复杂度为O(n). 操作如下：</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> j<span class="token operator">++</span> <span class="token punctuation">)</span>   <span class="token comment">//n是稀疏矩阵的列数</span>
+   k<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>                   <span class="token comment">//初始化</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n<span class="token punctuation">)</span>         <span class="token comment">//k[0]恒为0,不动；从k[1]开始</span>
+   k<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> k<span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> num <span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://img.rruu.net/image/6065dbe58a6f0" loading="lazy"></p>
+<h4 id="快速转置程序段"><a href="#快速转置程序段" class="headerlink" title="快速转置程序段"></a>快速转置程序段</h4><p>只需对原稀疏矩阵的行三元组表进行一遍扫描，<strong>时间复杂度为O(t)</strong> （t为三元组表行数）。</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">Spasematrix B<span class="token punctuation">;</span>  <span class="token comment">//转置后矩阵</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> t<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+ <span class="token punctuation">&#123;</span>
+  <span class="token keyword">int</span> index <span class="token operator">=</span> k<span class="token punctuation">[</span>A<span class="token punctuation">.</span>table<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>col<span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>  <span class="token comment">//index表示该元素在新三元组表的位置；根据此元素的列号把位置赋给index，再让位置自增1</span>
+  B<span class="token punctuation">.</span>table<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">.</span>col <span class="token operator">=</span> A<span class="token punctuation">.</span>table<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>row<span class="token punctuation">;</span>  <span class="token comment">//注意填入时，col和row互换</span>
+  B<span class="token punctuation">.</span>table<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">.</span>row <span class="token operator">=</span> A<span class="token punctuation">.</span>table<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>col<span class="token punctuation">;</span>
+  B<span class="token punctuation">.</span>table<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">.</span>value <span class="token operator">=</span> A<span class="token punctuation">.</span>table<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+ <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+]]></content>
+      <categories>
+        <category>C语言</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>线性表的顺序存储</title>
+    <url>/2021/03/30/%E7%BA%BF%E6%80%A7%E8%A1%A8/</url>
+    <content><![CDATA[<p>枯燥的学习笔记一篇，按照课本目录梳理一下。为了让自己能愿意看第二遍，尽量写的简洁~</p>
+<a id="more"></a>
+
+<h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>线性表有两种典型的存储结构：顺序和链式。</p>
+<p>基于C语言实现。</p>
+<p>线性表的顺序存储类似于数组，使用<strong>连续</strong>的存储空间，同时可以<strong>通过下标直接访问指定元素</strong>，是一种<strong>随机存取结构</strong>。</p>
+<h3 id="顺序表的定义"><a href="#顺序表的定义" class="headerlink" title="顺序表的定义"></a>顺序表的定义</h3><p>一个结构体可以搞定：</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">seqList</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> n<span class="token punctuation">;</span>               <span class="token comment">//顺序表中元素个数  </span>
+    <span class="token keyword">int</span> maxLength<span class="token punctuation">;</span>       <span class="token comment">//顺序表最大允许长度</span>
+    ElemType <span class="token operator">*</span>element<span class="token punctuation">;</span>   <span class="token comment">//ElemType为所需要的数据类型；*element指向顺序表存储空间的首地址~</span>
+<span class="token punctuation">&#125;</span>SeqList<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="顺序表的基本运算"><a href="#顺序表的基本运算" class="headerlink" title="顺序表的基本运算"></a>顺序表的基本运算</h3><h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><p>也就是为我们的element生成一个指定长度的一维数组空间。</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">//定义状态码</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">ERROR</span> <span class="token expression"><span class="token number">0</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">OK</span> <span class="token expression"><span class="token number">1</span></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">Overflow</span> <span class="token expression"><span class="token number">2</span>         </span><span class="token comment">//上溢</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">Underflow</span> <span class="token expression"><span class="token number">3</span>        </span><span class="token comment">//下溢</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">NotPresent</span> <span class="token expression"><span class="token number">4</span>       </span><span class="token comment">//元素不存在</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">Duplicate</span> <span class="token expression"><span class="token number">5</span>        </span><span class="token comment">//有重复元素</span></span>
+
+Status <span class="token function">init</span> <span class="token punctuation">(</span> Seqlist <span class="token operator">*</span>L <span class="token punctuation">,</span><span class="token keyword">int</span> mSize<span class="token punctuation">)</span> <span class="token comment">//传入一个顺序表和一个想要的表长，注意是*L</span>
+<span class="token punctuation">&#123;</span>
+    L<span class="token operator">-></span>maxlength <span class="token operator">=</span> mSize<span class="token punctuation">;</span>
+    L<span class="token operator">-></span>n <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>             <span class="token comment">//表中元素初始为0个</span>
+    L<span class="token operator">-></span>element <span class="token operator">=</span> <span class="token punctuation">(</span>ElemType <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>ElemType<span class="token punctuation">)</span><span class="token operator">*</span>mSize<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//如果malloc前不进行强制类型转换，返回的会是一个void类型的指针，与element的类型不符</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>L<span class="token operator">-></span>element<span class="token punctuation">)</span>       <span class="token comment">//分配空间失败反馈</span>
+        <span class="token keyword">return</span> ERROR<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> OK<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h4><p>直接通过下标定位取得。</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">Status <span class="token function">Find</span><span class="token punctuation">(</span> Seqlist L <span class="token punctuation">,</span><span class="token keyword">int</span> i <span class="token punctuation">,</span>ElemType <span class="token operator">*</span>x<span class="token punctuation">)</span>  <span class="token comment">//注意是L和*x</span>
+<span class="token punctuation">&#123;</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span> i <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">||</span> i <span class="token operator">></span> L<span class="token punctuation">.</span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment">//记得判断下标是否越界</span>
+       <span class="token keyword">return</span> ERROR<span class="token punctuation">;</span>
+  <span class="token operator">*</span>x <span class="token operator">=</span> L<span class="token punctuation">.</span>element<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> OK<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="插入新元素"><a href="#插入新元素" class="headerlink" title="插入新元素"></a>插入新元素</h4><p>后移留空。</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">Status <span class="token function">Insert</span><span class="token punctuation">(</span>SeqList <span class="token operator">*</span>L <span class="token punctuation">,</span><span class="token keyword">int</span> i <span class="token punctuation">,</span>ElemType x<span class="token punctuation">)</span>  <span class="token comment">//书上程序是在i之后的位置插入新元素</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> j<span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">||</span>i <span class="token operator">></span> L<span class="token operator">-></span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment">//注意i范围。i = -1表示新插入元素在顺序表最前面</span>
+        <span class="token keyword">return</span> ERROR<span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>L<span class="token operator">-></span>n <span class="token operator">==</span> L<span class="token operator">-></span>maxLength<span class="token punctuation">)</span> <span class="token comment">//判断顺序表是否满</span>
+        <span class="token keyword">return</span> ERROR<span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span>j <span class="token operator">=</span> L<span class="token operator">-></span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">></span> i<span class="token punctuation">;</span> j<span class="token operator">--</span><span class="token punctuation">)</span>  <span class="token comment">//j表示被后移的元素，从后往前逐个后移元素，最后一个后移的是i+1</span>
+        L<span class="token operator">-></span>element<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> L<span class="token operator">-></span>element<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>     <span class="token comment">//把前一个元素的值赋给后一个</span>
+    L<span class="token operator">-></span>element<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> x<span class="token punctuation">;</span>     <span class="token comment">//x放入i+1的位置</span>
+    L<span class="token operator">-></span>n <span class="token operator">=</span> L<span class="token operator">-></span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>           <span class="token comment">//表长+1，又是一个小细节</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>【分析】</strong>在i后插入新元素，需要移动n-i-1个元素。一共有n+1个位置可以插入新元素。因此插入一个新元素平均移动元素次数为 $$E_i=\sum^{n-1}_{i=-1}{\frac{n-i-1}{n+1}}=\frac{n}{2}$$</p>
+<p>可见此算法的<strong>平均时间复杂度为O(n)</strong>.</p>
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><p> 前移覆盖，从i+1前移到i开始。</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c">Status <span class="token function">Delete</span><span class="token punctuation">(</span>Seqlist <span class="token operator">*</span>L<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">)</span>  <span class="token comment">//删除下标为i的元素</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> j<span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">||</span>i <span class="token operator">></span> L<span class="token operator">-></span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>  
+        <span class="token keyword">return</span> ERROR<span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>L<span class="token operator">-></span>n<span class="token punctuation">)</span>      <span class="token comment">//判断表是否为空</span>
+        <span class="token keyword">return</span> ERROR<span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span>j <span class="token operator">=</span> i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> L <span class="token operator">-></span> n<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment">//书上程序，j从i+1开始，即表示被前移的元素，最后一个要前移的是n-1</span>
+        L<span class="token operator">-></span>element<span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> L<span class="token operator">-></span>element<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    L<span class="token operator">-></span>n<span class="token operator">--</span><span class="token punctuation">;</span>        <span class="token comment">//小细节，表长减1</span>
+    <span class="token keyword">return</span> OK；
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c">Status <span class="token function">Output</span><span class="token punctuation">(</span>SeqList <span class="token operator">*</span>L<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> i<span class="token punctuation">;</span>    
+    <span class="token keyword">if</span><span class="token punctuation">(</span>L<span class="token operator">-></span>n <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> ERROR<span class="token punctuation">;</span>    
+    <span class="token keyword">for</span><span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> L<span class="token operator">-></span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>        <span class="token comment">//遍历表中元素，从前往后逐个输出</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d "</span><span class="token punctuation">,</span> L<span class="token operator">-></span>element<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token keyword">return</span> OK<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a><strong>撤销</strong></h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">Destroy</span><span class="token punctuation">(</span>SeqList <span class="token operator">*</span>L<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    L<span class="token operator">-></span>n <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>             <span class="token comment">//长度清0</span>
+    L<span class="token operator">-></span>maxLength <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>    
+    <span class="token function">free</span><span class="token punctuation">(</span>L<span class="token operator">-></span>element<span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">//释放存储空间</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>C语言</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>链表进阶</title>
+    <url>/2021/04/07/%E9%93%BE%E8%A1%A8%E8%BF%9B%E9%98%B6/</url>
+    <content><![CDATA[<p>带表头结点的单链表、单循环链表、双向链表</p>
+<a id="more"></a>
+
+<h3 id="带表头结点的单链表"><a href="#带表头结点的单链表" class="headerlink" title="带表头结点的单链表"></a>带表头结点的单链表</h3><p>注意表头结点和头结点的区别：表头结点是一个完整的结点，元素域不存放数据，指针域存放头结点的地址。</p>
+<p>而头结点在单链表中是由first指针指向的结点，是存放数据的。而头指针 *first是Node型指针，不是结点。</p>
+<p>为什么要创造这么个东西，因为与单链表相比，有表头结点就不需要单独处理需要插入头结点之前，或是删除头节点的情况。</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">node</span>
+<span class="token punctuation">&#123;</span>
+   ElemType element<span class="token punctuation">;</span>          <span class="token comment">//结点数据域</span>
+   <span class="token keyword">struct</span> <span class="token class-name">node</span> <span class="token operator">*</span>Link<span class="token punctuation">;</span>         <span class="token comment">//结点指针域</span>
+<span class="token punctuation">&#125;</span>Node<span class="token punctuation">;</span>                        <span class="token comment">//和单链表定义的node相同</span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">headerList</span>
+<span class="token punctuation">&#123;</span>
+   Node <span class="token operator">*</span>head<span class="token punctuation">;</span>
+   <span class="token keyword">int</span> n<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c">Status <span class="token function">Init</span><span class="token punctuation">(</span>HeaderList <span class="token operator">*</span>h<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    h<span class="token operator">-></span>head <span class="token operator">=</span> <span class="token punctuation">(</span>Node<span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">//生成表头结点</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>h<span class="token operator">-></span>head<span class="token punctuation">)</span>                                   <span class="token comment">//无法生成时报错</span>
+        <span class="token keyword">return</span> ERROR<span class="token punctuation">;</span>           
+    h<span class="token operator">-></span>head<span class="token operator">-></span>link <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>                          <span class="token comment">//初始化为空表</span>
+    h<span class="token operator">-></span>n <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>                                      
+    <span class="token keyword">return</span> OK<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c">Status <span class="token function">Insert</span><span class="token punctuation">(</span>HeaderList <span class="token operator">*</span>h<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">,</span> ElemType x<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    Node <span class="token operator">*</span>p<span class="token punctuation">,</span> <span class="token operator">*</span>q<span class="token punctuation">;</span>    
+    <span class="token keyword">int</span> j<span class="token punctuation">;</span>    
+    <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">&lt;</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">||</span> i<span class="token operator">></span>h<span class="token operator">-></span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> ERROR<span class="token punctuation">;</span>    
+    p <span class="token operator">=</span> h<span class="token operator">-></span>head<span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span>j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> i<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>              <span class="token comment">//省去判断头结点的操作~</span>
+        p <span class="token operator">=</span> p<span class="token operator">-></span>link<span class="token punctuation">;</span>                     <span class="token comment">//移动到ai处</span>
+    q <span class="token operator">=</span> <span class="token punctuation">(</span>Node<span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Node<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    q<span class="token operator">-></span>element <span class="token operator">=</span> x<span class="token punctuation">;</span>                      
+    q<span class="token operator">-></span>link <span class="token operator">=</span> p<span class="token operator">-></span>link<span class="token punctuation">;</span>                   <span class="token comment">//操作与单链表相同</span>
+    p<span class="token operator">-></span>link <span class="token operator">=</span> q<span class="token punctuation">;</span>   
+    h<span class="token operator">-></span>n<span class="token operator">++</span><span class="token punctuation">;</span>    
+    <span class="token keyword">return</span> OK<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c">Status <span class="token function">Delete</span><span class="token punctuation">(</span>HeaderList <span class="token operator">*</span>h<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> j<span class="token punctuation">;</span>    
+    Node <span class="token operator">*</span>p<span class="token punctuation">,</span> <span class="token operator">*</span>q<span class="token punctuation">;</span>   
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>h<span class="token operator">-></span>n<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> ERROR<span class="token punctuation">;</span>   
+    <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">&lt;</span><span class="token number">0</span> <span class="token operator">||</span> i<span class="token operator">></span>h<span class="token operator">-></span>n<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> ERROR<span class="token punctuation">;</span>    
+    q <span class="token operator">=</span> h<span class="token operator">-></span>head<span class="token punctuation">;</span>   
+    <span class="token keyword">for</span><span class="token punctuation">(</span>j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> i<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+        q <span class="token operator">=</span> q<span class="token operator">-></span>link<span class="token punctuation">;</span>    
+    p <span class="token operator">=</span> q<span class="token operator">-></span>link<span class="token punctuation">;</span>               <span class="token comment">//p的作用是指向q的下一个结点，也就是要删除的结点</span>
+    q<span class="token operator">-></span>link <span class="token operator">=</span> p<span class="token operator">-></span>link<span class="token punctuation">;</span>    
+    <span class="token function">free</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    h<span class="token operator">-></span>n<span class="token operator">--</span><span class="token punctuation">;</span>   
+    <span class="token keyword">return</span> OK<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="单循环链表"><a href="#单循环链表" class="headerlink" title="单循环链表"></a>单循环链表</h3><p>让尾结点的指针域存储头结点或是表头结点的地址（如果有表头结点的话）。</p>
+<p>作用有：</p>
+<p>1.不存在NULL指针，遍历时判断终止的条件不再是判断p-&gt;next是否为空，而是是否等于某一特定指针；</p>
+<p>2.从任一结点出发都可以遍历链表中所有结点；</p>
+<h3 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h3><blockquote>
+<p>要不是mooc的作业题居然考这个……</p>
+<p>总之插入和删除是真的绕……书上只给了部分代码，有空我把它补全</p>
+</blockquote>
+<p><img src="https://img.rruu.net/image/606ddf05139e3" loading="lazy"></p>
+<p>（抄书）双向链表的存储结构定义如下：</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">duNode</span><span class="token punctuation">&#123;</span>          <span class="token comment">//‘du’我且理解为‘double’的缩写？</span>
+       Elemtype <span class="token operator">*</span>element<span class="token punctuation">;</span>
+       <span class="token keyword">struct</span> <span class="token class-name">duNode</span> <span class="token operator">*</span>llink<span class="token punctuation">;</span>    <span class="token comment">//左指针域，存储前驱结点地址（prev）</span>
+       <span class="token keyword">struct</span> <span class="token class-name">duNode</span> <span class="token operator">*</span>rlink<span class="token punctuation">;</span>    <span class="token comment">//右指针域，存储后驱结点地址（next）</span>
+<span class="token punctuation">&#125;</span>DuNode<span class="token punctuation">,</span> DuList<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="插入-1"><a href="#插入-1" class="headerlink" title="插入"></a>插入</h4><p>核心代码：</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">//q插入p前，注意顺序！！！</span>
+q<span class="token operator">-></span>llink <span class="token operator">=</span> p<span class="token operator">-></span>llink<span class="token punctuation">;</span>   <span class="token comment">//q的前驱结点改为p的前驱结点</span>
+q<span class="token operator">-></span>rlink <span class="token operator">=</span> p<span class="token punctuation">;</span>          <span class="token comment">//q的后驱结点改为p</span>
+p<span class="token operator">-></span>llink<span class="token operator">-></span>rlink <span class="token operator">=</span> q<span class="token punctuation">;</span>   <span class="token comment">//让p前驱结点的后驱结点变成q（原本后驱结点是p）</span>
+p<span class="token operator">-></span>llink <span class="token operator">=</span> q<span class="token punctuation">;</span>          <span class="token comment">//p的前驱结点改为q</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="删除-1"><a href="#删除-1" class="headerlink" title="删除"></a>删除</h4><p>核心代码：</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">//很对称，很美，嗯</span>
+p<span class="token operator">-></span>llink<span class="token operator">-></span>rlink <span class="token operator">=</span> p<span class="token operator">-></span>rlink<span class="token punctuation">;</span>   <span class="token comment">//p前驱结点的后驱结点改为p的后驱结点</span>
+p<span class="token operator">-></span>rlink<span class="token operator">-></span>llink <span class="token operator">=</span> p<span class="token operator">-></span>llink<span class="token punctuation">;</span>   <span class="token comment">//p后驱结点的前驱结点改为p的前驱结点</span>
+<span class="token comment">//终于跳过了p</span>
+<span class="token function">free</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>C语言</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+</search>

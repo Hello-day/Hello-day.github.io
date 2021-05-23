@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>pxd&#39;s blog</title>
+  <icon>http://example.com/icon.png</icon>
+  <subtitle>希望成为周更博主（咕）</subtitle>
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2021-05-23T13:25:56.540Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>Sevon</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>指针数组与数组指针(转载)</title>
+    <link href="http://example.com/2021/05/23/%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84%E4%B8%8E%E6%95%B0%E7%BB%84%E6%8C%87%E9%92%88-%E8%BD%AC%E8%BD%BD/"/>
+    <id>http://example.com/2021/05/23/%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84%E4%B8%8E%E6%95%B0%E7%BB%84%E6%8C%87%E9%92%88-%E8%BD%AC%E8%BD%BD/</id>
+    <published>2021-05-23T12:36:59.000Z</published>
+    <updated>2021-05-23T13:25:56.540Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;这两个东西有区别，固然。但是，写起来真的区别不大……做题不能靠蒙，我还是搬运一下。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="C语言" scheme="http://example.com/categories/C%E8%AF%AD%E8%A8%80/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>二级指针（转载）</title>
+    <link href="http://example.com/2021/05/22/%E4%BA%8C%E7%BA%A7%E6%8C%87%E9%92%88/"/>
+    <id>http://example.com/2021/05/22/%E4%BA%8C%E7%BA%A7%E6%8C%87%E9%92%88/</id>
+    <published>2021-05-22T09:22:52.000Z</published>
+    <updated>2021-05-22T10:41:28.121Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;做题时候碰到，感觉很有意思&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="C语言" scheme="http://example.com/categories/C%E8%AF%AD%E8%A8%80/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>生词本（鸽了）</title>
+    <link href="http://example.com/2021/04/22/%E7%94%9F%E8%AF%8D%E6%9C%AC/"/>
+    <id>http://example.com/2021/04/22/%E7%94%9F%E8%AF%8D%E6%9C%AC/</id>
+    <published>2021-04-21T16:10:02.000Z</published>
+    <updated>2021-05-12T15:10:01.229Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h3&gt;&lt;p&gt;每天积累词和词组，以证明每天都有看英语。没有量的要求。&lt;/p&gt;
+&lt;p&gt;我能坚持多少天呢？&lt;/p&gt;
+&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="随笔" scheme="http://example.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="Web" scheme="http://example.com/tags/Web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>二叉树的运算</title>
+    <link href="http://example.com/2021/04/12/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E8%BF%90%E7%AE%97/"/>
+    <id>http://example.com/2021/04/12/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E8%BF%90%E7%AE%97/</id>
+    <published>2021-04-12T05:50:36.000Z</published>
+    <updated>2021-04-12T15:05:14.108Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;二叉树的结构体定义、创建二叉树、先序、中序、后序遍历运算。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="C语言" scheme="http://example.com/categories/C%E8%AF%AD%E8%A8%80/"/>
+    
+    
+    <category term="数据结构" scheme="http://example.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>二次积分转化极坐标形式</title>
+    <link href="http://example.com/2021/04/11/%E4%BA%8C%E6%AC%A1%E7%A7%AF%E5%88%86%E8%BD%AC%E5%8C%96%E6%9E%81%E5%9D%90%E6%A0%87%E5%BD%A2%E5%BC%8F/"/>
+    <id>http://example.com/2021/04/11/%E4%BA%8C%E6%AC%A1%E7%A7%AF%E5%88%86%E8%BD%AC%E5%8C%96%E6%9E%81%E5%9D%90%E6%A0%87%E5%BD%A2%E5%BC%8F/</id>
+    <published>2021-04-11T14:22:45.000Z</published>
+    <updated>2021-04-11T15:27:29.294Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;原作者：知乎@tetradecane&lt;/p&gt;
+&lt;p&gt;原文链接：&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="课内" scheme="http://example.com/categories/%E8%AF%BE%E5%86%85/"/>
+    
+    
+    <category term="高等数学" scheme="http://example.com/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>作文素材（日更）</title>
+    <link href="http://example.com/2021/04/10/%E4%BD%9C%E6%96%87%E7%B4%A0%E6%9D%90/"/>
+    <id>http://example.com/2021/04/10/%E4%BD%9C%E6%96%87%E7%B4%A0%E6%9D%90/</id>
+    <published>2021-04-10T04:41:04.000Z</published>
+    <updated>2021-04-22T15:20:06.485Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt; 随手记下遇到的好的表达，也是不希望它们是我这辈子最后一次见到。&lt;/p&gt;
+&lt;p&gt;不是很严格的素材本~&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="课内" scheme="http://example.com/categories/%E8%AF%BE%E5%86%85/"/>
+    
+    
+    <category term="英语" scheme="http://example.com/tags/%E8%8B%B1%E8%AF%AD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>期中复习计划</title>
+    <link href="http://example.com/2021/04/10/%E5%A4%8D%E4%B9%A0%E8%AE%A1%E5%88%92/"/>
+    <id>http://example.com/2021/04/10/%E5%A4%8D%E4%B9%A0%E8%AE%A1%E5%88%92/</id>
+    <published>2021-04-10T03:58:00.000Z</published>
+    <updated>2021-04-10T04:41:58.365Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;快期中考了。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="随笔" scheme="http://example.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>六级听力技巧</title>
+    <link href="http://example.com/2021/04/08/%E5%90%AC%E5%8A%9B%E6%8A%80%E5%B7%A7/"/>
+    <id>http://example.com/2021/04/08/%E5%90%AC%E5%8A%9B%E6%8A%80%E5%B7%A7/</id>
+    <published>2021-04-08T13:44:49.000Z</published>
+    <updated>2021-04-08T15:07:22.471Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;我的听力太拉了，太拉了……&lt;/p&gt;
+&lt;p&gt;有点技巧，总比没有好。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="课内" scheme="http://example.com/categories/%E8%AF%BE%E5%86%85/"/>
+    
+    
+    <category term="英语" scheme="http://example.com/tags/%E8%8B%B1%E8%AF%AD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>链表进阶</title>
+    <link href="http://example.com/2021/04/07/%E9%93%BE%E8%A1%A8%E8%BF%9B%E9%98%B6/"/>
+    <id>http://example.com/2021/04/07/%E9%93%BE%E8%A1%A8%E8%BF%9B%E9%98%B6/</id>
+    <published>2021-04-07T08:15:52.000Z</published>
+    <updated>2021-04-07T16:34:36.165Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;带表头结点的单链表、单循环链表、双向链表&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="C语言" scheme="http://example.com/categories/C%E8%AF%AD%E8%A8%80/"/>
+    
+    
+    <category term="数据结构" scheme="http://example.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>单链表</title>
+    <link href="http://example.com/2021/04/06/%E5%8D%95%E9%93%BE%E8%A1%A8/"/>
+    <id>http://example.com/2021/04/06/%E5%8D%95%E9%93%BE%E8%A1%A8/</id>
+    <published>2021-04-06T09:22:31.000Z</published>
+    <updated>2021-04-07T15:34:04.708Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;老是碰见链表……决定还是写一下，方便复习。&lt;/p&gt;
+&lt;p&gt;从单链表写起。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="C语言" scheme="http://example.com/categories/C%E8%AF%AD%E8%A8%80/"/>
+    
+    
+    <category term="数据结构" scheme="http://example.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>二叉树的基本性质</title>
+    <link href="http://example.com/2021/04/03/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8/"/>
+    <id>http://example.com/2021/04/03/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8/</id>
+    <published>2021-04-03T10:17:06.000Z</published>
+    <updated>2021-04-12T13:55:27.429Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;二叉树很常用，怕自己记不住，对它的基本性质和运算做一个梳理。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="C语言" scheme="http://example.com/categories/C%E8%AF%AD%E8%A8%80/"/>
+    
+    
+    <category term="数据结构" scheme="http://example.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>稀疏矩阵的快速转置算法</title>
+    <link href="http://example.com/2021/04/01/%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5/"/>
+    <id>http://example.com/2021/04/01/%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5/</id>
+    <published>2021-04-01T09:21:58.000Z</published>
+    <updated>2021-04-06T11:22:49.742Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;问就是终于搞懂了一点。&lt;/p&gt;
+&lt;p&gt;现学现卖~&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="C语言" scheme="http://example.com/categories/C%E8%AF%AD%E8%A8%80/"/>
+    
+    
+    <category term="数据结构" scheme="http://example.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>线性表的顺序存储</title>
+    <link href="http://example.com/2021/03/30/%E7%BA%BF%E6%80%A7%E8%A1%A8/"/>
+    <id>http://example.com/2021/03/30/%E7%BA%BF%E6%80%A7%E8%A1%A8/</id>
+    <published>2021-03-30T11:22:53.000Z</published>
+    <updated>2021-04-01T09:23:14.949Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;枯燥的学习笔记一篇，按照课本目录梳理一下。为了让自己能愿意看第二遍，尽量写的简洁~&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="C语言" scheme="http://example.com/categories/C%E8%AF%AD%E8%A8%80/"/>
+    
+    
+    <category term="数据结构" scheme="http://example.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IP地址简介</title>
+    <link href="http://example.com/2021/01/23/IP/"/>
+    <id>http://example.com/2021/01/23/IP/</id>
+    <published>2021-01-23T09:53:02.000Z</published>
+    <updated>2021-04-01T07:56:01.074Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://img.rruu.net/image/600bf4ed4bac3&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Web_Is_Good" scheme="http://example.com/categories/Web-Is-Good/"/>
+    
+    
+    <category term="Web" scheme="http://example.com/tags/Web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第一篇博文</title>
+    <link href="http://example.com/2021/01/23/first/"/>
+    <id>http://example.com/2021/01/23/first/</id>
+    <published>2021-01-23T07:39:26.000Z</published>
+    <updated>2021-03-21T14:43:48.500Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;耗时两天，把博客搭好，然后美化了一下！试一下，这是第一篇博文！是时候去完成那些咕咕咕的项目了！&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="随笔" scheme="http://example.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="Web" scheme="http://example.com/tags/Web/"/>
+    
+  </entry>
+  
+</feed>

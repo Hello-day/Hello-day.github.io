@@ -100,18 +100,6 @@
       </tags>
   </entry>
   <entry>
-    <title>第一篇博文</title>
-    <url>/2021/01/23/first/</url>
-    <content><![CDATA[<p>耗时两天，把博客搭好，然后美化了一下！试一下，这是第一篇博文！是时候去完成那些咕咕咕的项目了！</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>Web</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>二叉树的基本性质</title>
     <url>/2021/04/03/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8/</url>
     <content><![CDATA[<p>二叉树很常用，怕自己记不住，对它的基本性质和运算做一个梳理。</p>
@@ -174,6 +162,18 @@
       </categories>
       <tags>
         <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>第一篇博文</title>
+    <url>/2021/01/23/first/</url>
+    <content><![CDATA[<p>耗时两天，把博客搭好，然后美化了一下！试一下，这是第一篇博文！是时候去完成那些咕咕咕的项目了！</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
       </tags>
   </entry>
   <entry>
@@ -298,86 +298,6 @@
 <p>指针数组的数组名传递参数对应为指针的指针，即二级指针，二维数组的数组名传递参数对应为数组指针，即指向一维数组的指针。</p>
 <p>一级指针通过形参，可以修改实参中指针所指向的地址中的值，修改不了实参中指针所指向的地址，需要借助二级指针才可以。</p>
 <p> <strong>简而言之，二级指针调用，传递的是一级指针的地址。</strong></p>
-]]></content>
-      <categories>
-        <category>C语言</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>六级听力技巧</title>
-    <url>/2021/04/08/%E5%90%AC%E5%8A%9B%E6%8A%80%E5%B7%A7/</url>
-    <content><![CDATA[<p>我的听力太拉了，太拉了……</p>
-<p>有点技巧，总比没有好。</p>
-<a id="more"></a>
-
-<p>按着知乎上的建议，还有点用，简要整理一下。</p>
-<p>六级听力有三种题型：长对话，短文，讲座。</p>
-<h3 id="长对话"><a href="#长对话" class="headerlink" title="长对话"></a>长对话</h3><p>3 - 4个小题，一般均匀地分布在对话的每个回合，极少出现一个回合包含两个考点的情况。所以，在一个回合的对话中发现考点后，该回合剩余部分可稍作放松。</p>
-<p>考点位置多在一段话的开头或结尾。</p>
-<p>Tips：</p>
-<ol>
-<li>更多单词或短语被读到的选项是正确选项；</li>
-<li>正确选项常包含原文的同义词替换；</li>
-<li>第一题常对应原文第一句或对话的第一回合；</li>
-<li>顺序出题。最好边听边做，不等问题；</li>
-<li>分清对话问答双方，考点多出于答方。</li>
-</ol>
-<h3 id="短文"><a href="#短文" class="headerlink" title="短文"></a>短文</h3><p>1.预测主题，区分文体，抓关键信息；</p>
-<p>2.捕捉每段开头第一句话；</p>
-<p>3.逻辑词、转折词后常设考点；</p>
-<p>4.听到什么不一定选什么，注意同义替换词。</p>
-<h3 id="讲座"><a href="#讲座" class="headerlink" title="讲座"></a>讲座</h3><p>1.出题点<strong>均匀分布</strong>，题目顺序和讲座文章顺序通常一致；</p>
-<p>2.同义替换较少，在不是只听到个别词的情况下，听到什么选什么的概率较大。</p>
-<p>其他技巧类似于短文。</p>
-]]></content>
-      <categories>
-        <category>课内</category>
-      </categories>
-      <tags>
-        <tag>英语</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>指针数组与数组指针(转载)</title>
-    <url>/2021/05/23/%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84%E4%B8%8E%E6%95%B0%E7%BB%84%E6%8C%87%E9%92%88-%E8%BD%AC%E8%BD%BD/</url>
-    <content><![CDATA[<p>这两个东西有区别，固然。但是，写起来真的区别不大……做题不能靠蒙，我还是搬运一下。</p>
-<a id="more"></a>
-
-<blockquote>
-<p>原文：<a href="https://blog.csdn.net/as480133937/article/details/92122982">https://blog.csdn.net/as480133937/article/details/92122982</a></p>
-</blockquote>
-<h3 id="区分"><a href="#区分" class="headerlink" title="区分"></a>区分</h3><p>首先我们需要了解什么是数组指针以及什么是指针数组，如下：</p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> <span class="token operator">*</span>p<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>      <span class="token comment">//指针数组</span>
-<span class="token keyword">int</span> <span class="token punctuation">(</span><span class="token operator">*</span>p<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>    <span class="token comment">//数组指针</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>数组指针的意思即为<strong>通过指针引用数组</strong>，p先和*结合，说明了p是一个指针变量，指向一个大小为5的数组，也就是数组指针的中括号只代表指向的数组的大小，不代表自身的大小。所以，int (*p)[5]即为一个数组指针。</p>
-<p>int *p[5]则是一个大小为5且存放整型指针的数组。</p>
-<p>区别还是很明显的：数组指针指向数组，本质是指针；指针数组存放指针，本质是数组。</p>
-<h3 id="指针数组"><a href="#指针数组" class="headerlink" title="指针数组"></a>指针数组</h3><p>C语言中，指针数组其实不一定要在定义时给出长度。指针可以直接拿来当数组使用，如：</p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"hello world"</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token operator">*</span>p<span class="token punctuation">;</span>
-p <span class="token operator">=</span> a<span class="token punctuation">;</span>
-<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c"</span><span class="token punctuation">,</span> <span class="token operator">*</span>p<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//p可以进行自增操作，但如果是a++就会报错，因为a是地址常量。这也是用指针的好处</span>
-<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c"</span><span class="token punctuation">,</span> p<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//利用数组形式输出</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>可见，当指针被用来指向某数组的首地址时，它可以直接按数组格式使用，写成类似于p[n]的格式。</p>
-<h3 id="数组指针"><a href="#数组指针" class="headerlink" title="数组指针"></a>数组指针</h3><p>介绍指向一维数组和二维数组的指针,它们在定义上有区别。</p>
-<h4 id="一维数组指针"><a href="#一维数组指针" class="headerlink" title="一维数组指针"></a>一维数组指针</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> <span class="token punctuation">(</span><span class="token operator">*</span>p<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment">//定义数组指针</span>
-<span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>     <span class="token comment">//定义一维数组</span>
-p <span class="token operator">=</span> <span class="token operator">&amp;</span>a<span class="token punctuation">;</span>       <span class="token comment">//需要&amp;符!!!!!!!!!!</span>
-<span class="token comment">//p = a; 这样是错误的</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="二维数组指针"><a href="#二维数组指针" class="headerlink" title="二维数组指针"></a>二维数组指针</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> <span class="token punctuation">(</span><span class="token operator">*</span>p<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>   <span class="token comment">//指向一个数组，数组有3个元素，每个元素是一个int型整数</span>
-<span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-p<span class="token operator">=</span> a<span class="token punctuation">;</span>          <span class="token comment">//将该二维数组的首地址赋给p，也就是a[0]或&amp;a[0][0]</span>
-p<span class="token operator">++</span><span class="token punctuation">;</span>           <span class="token comment">//该语句执行过后，也就是p=p+1;p跨过行a[0][]指向了行a[1][]</span>
-<span class="token comment">//p = &amp;a; 这样是错误的，和一维数组正相反！！</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<blockquote>
-<p>一维数组赋值要加上&amp;，原因是 p 本质是一个指向整个数组的指针 ，&amp;a 代表的是整个数组的首地址，指向了整个数组 。    </p>
-<p>而 a 代表的是数组<strong>首个元素的地址</strong>，是一个单纯的地址  (虽然&amp;a 与a在数值上相同) 。在C语言中，赋值符号“=”号两边的数据类型必须是相同的，p = &a; 是将整个数组的首地址赋值给p，而 p = a则是将一个指针赋值给p，这样是错误的。</p>
-<p>同理，如果是二维数组，<strong>a则直接表示一个一维数组的首地址a[ ][3]</strong> ，而&amp;a 则表示一个二维数组的首地址 ，p需要的值是一维数组的首地址。所以赋值会出现错误。</p>
-</blockquote>
-<p>二维数组指针也可以在定义时直接赋值：</p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token punctuation">(</span><span class="token operator">*</span>p<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token operator">=</span>a<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>（还有一些知识点，后续待补充）</p>
 ]]></content>
       <categories>
         <category>C语言</category>
@@ -553,6 +473,109 @@ p<span class="token operator">++</span><span class="token punctuation">;</span> 
       </categories>
   </entry>
   <entry>
+    <title>六级听力技巧</title>
+    <url>/2021/04/08/%E5%90%AC%E5%8A%9B%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[<p>我的听力太拉了，太拉了……</p>
+<p>有点技巧，总比没有好。</p>
+<a id="more"></a>
+
+<p>按着知乎上的建议，还有点用，简要整理一下。</p>
+<p>六级听力有三种题型：长对话，短文，讲座。</p>
+<h3 id="长对话"><a href="#长对话" class="headerlink" title="长对话"></a>长对话</h3><p>3 - 4个小题，一般均匀地分布在对话的每个回合，极少出现一个回合包含两个考点的情况。所以，在一个回合的对话中发现考点后，该回合剩余部分可稍作放松。</p>
+<p>考点位置多在一段话的开头或结尾。</p>
+<p>Tips：</p>
+<ol>
+<li>更多单词或短语被读到的选项是正确选项；</li>
+<li>正确选项常包含原文的同义词替换；</li>
+<li>第一题常对应原文第一句或对话的第一回合；</li>
+<li>顺序出题。最好边听边做，不等问题；</li>
+<li>分清对话问答双方，考点多出于答方。</li>
+</ol>
+<h3 id="短文"><a href="#短文" class="headerlink" title="短文"></a>短文</h3><p>1.预测主题，区分文体，抓关键信息；</p>
+<p>2.捕捉每段开头第一句话；</p>
+<p>3.逻辑词、转折词后常设考点；</p>
+<p>4.听到什么不一定选什么，注意同义替换词。</p>
+<h3 id="讲座"><a href="#讲座" class="headerlink" title="讲座"></a>讲座</h3><p>1.出题点<strong>均匀分布</strong>，题目顺序和讲座文章顺序通常一致；</p>
+<p>2.同义替换较少，在不是只听到个别词的情况下，听到什么选什么的概率较大。</p>
+<p>其他技巧类似于短文。</p>
+]]></content>
+      <categories>
+        <category>课内</category>
+      </categories>
+      <tags>
+        <tag>英语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>指针数组与数组指针(转载)</title>
+    <url>/2021/05/23/%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84%E4%B8%8E%E6%95%B0%E7%BB%84%E6%8C%87%E9%92%88-%E8%BD%AC%E8%BD%BD/</url>
+    <content><![CDATA[<p>这两个东西有区别，固然。但是，写起来真的区别不大……做题不能靠蒙，我还是搬运一下。</p>
+<a id="more"></a>
+
+<blockquote>
+<p>原文：<a href="https://blog.csdn.net/as480133937/article/details/92122982">https://blog.csdn.net/as480133937/article/details/92122982</a></p>
+</blockquote>
+<h3 id="区分"><a href="#区分" class="headerlink" title="区分"></a>区分</h3><p>首先我们需要了解什么是数组指针以及什么是指针数组，如下：</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> <span class="token operator">*</span>p<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>      <span class="token comment">//指针数组</span>
+<span class="token keyword">int</span> <span class="token punctuation">(</span><span class="token operator">*</span>p<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>    <span class="token comment">//数组指针</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>数组指针的意思即为<strong>通过指针引用数组</strong>，p先和*结合，说明了p是一个指针变量，指向一个大小为5的数组，也就是数组指针的中括号只代表指向的数组的大小，不代表自身的大小。所以，int (*p)[5]即为一个数组指针。</p>
+<p>int *p[5]则是一个大小为5且存放整型指针的数组。</p>
+<p>区别还是很明显的：数组指针指向数组，本质是指针；指针数组存放指针，本质是数组。</p>
+<h3 id="指针数组"><a href="#指针数组" class="headerlink" title="指针数组"></a>指针数组</h3><p>C语言中，指针数组其实不一定要在定义时给出长度。指针可以直接拿来当数组使用，如：</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"hello world"</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token operator">*</span>p<span class="token punctuation">;</span>
+p <span class="token operator">=</span> a<span class="token punctuation">;</span>
+<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c"</span><span class="token punctuation">,</span> <span class="token operator">*</span>p<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//p可以进行自增操作，但如果是a++就会报错，因为a是地址常量。这也是用指针的好处</span>
+<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c"</span><span class="token punctuation">,</span> p<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//利用数组形式输出</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>可见，当指针被用来指向某数组的首地址时，它可以直接按数组格式使用，写成类似于p[n]的格式。</p>
+<h3 id="数组指针"><a href="#数组指针" class="headerlink" title="数组指针"></a>数组指针</h3><p>介绍指向一维数组和二维数组的指针,它们在定义上有区别。</p>
+<h4 id="一维数组指针"><a href="#一维数组指针" class="headerlink" title="一维数组指针"></a>一维数组指针</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> <span class="token punctuation">(</span><span class="token operator">*</span>p<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment">//定义数组指针</span>
+<span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>     <span class="token comment">//定义一维数组</span>
+p <span class="token operator">=</span> <span class="token operator">&amp;</span>a<span class="token punctuation">;</span>       <span class="token comment">//需要&amp;符!!!!!!!!!!</span>
+<span class="token comment">//p = a; 这样是错误的</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="二维数组指针"><a href="#二维数组指针" class="headerlink" title="二维数组指针"></a>二维数组指针</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> <span class="token punctuation">(</span><span class="token operator">*</span>p<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>   <span class="token comment">//指向一个数组，数组有3个元素，每个元素是一个int型整数</span>
+<span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+p<span class="token operator">=</span> a<span class="token punctuation">;</span>          <span class="token comment">//将该二维数组的首地址赋给p，也就是a[0]或&amp;a[0][0]</span>
+p<span class="token operator">++</span><span class="token punctuation">;</span>           <span class="token comment">//该语句执行过后，也就是p=p+1;p跨过行a[0][]指向了行a[1][]</span>
+<span class="token comment">//p = &amp;a; 这样是错误的，和一维数组正相反！！</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>一维数组赋值要加上&amp;，原因是 p 本质是一个指向整个数组的指针 ，&amp;a 代表的是整个数组的首地址，指向了整个数组 。    </p>
+<p>而 a 代表的是数组<strong>首个元素的地址</strong>，是一个单纯的地址  (虽然&amp;a 与a在数值上相同) 。在C语言中，赋值符号“=”号两边的数据类型必须是相同的，p = &a; 是将整个数组的首地址赋值给p，而 p = a则是将一个指针赋值给p，这样是错误的。</p>
+<p>同理，如果是二维数组，<strong>a则直接表示一个一维数组的首地址a[ ][3]</strong> ，而&amp;a 则表示一个二维数组的首地址 ，p需要的值是一维数组的首地址。所以赋值会出现错误。</p>
+</blockquote>
+<p>二维数组指针也可以在定义时直接赋值：</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token punctuation">(</span><span class="token operator">*</span>p<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token operator">=</span>a<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>（还有一些知识点，后续待补充）</p>
+]]></content>
+      <categories>
+        <category>C语言</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>学习规划</title>
+    <url>/2021/05/26/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>java-idea快捷键整理</title>
+    <url>/2021/08/11/%E7%94%9F%E8%AF%8D%E6%9C%AC/</url>
+    <content><![CDATA[<h2 id="8-11"><a href="#8-11" class="headerlink" title="8.11"></a>8.11</h2><p>快速生成main方法：psvm+回车</p>
+<p>快速生成输出语句：sout+回车</p>
+<p>内容辅助键：ctrl+alt+空格（内容提示，代码补全等）</p>
+<p>转化为注释：</p>
+<p>​           单行注释：选中文字+ctrl+/，再来一次取消</p>
+<p>​           多行注释：选中文字+ctrl+shift+/，再来一次取消</p>
+<p>格式化：ctrl+alt+l</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>Web</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>稀疏矩阵的快速转置算法</title>
     <url>/2021/04/01/%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5/</url>
     <content><![CDATA[<p>问就是终于搞懂了一点。</p>
@@ -611,60 +634,6 @@ p<span class="token operator">++</span><span class="token punctuation">;</span> 
       </categories>
       <tags>
         <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>生词本（鸽了）</title>
-    <url>/2021/04/22/%E7%94%9F%E8%AF%8D%E6%9C%AC/</url>
-    <content><![CDATA[<h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>每天积累词和词组，以证明每天都有看英语。没有量的要求。</p>
-<p>我能坚持多少天呢？</p>
-<h3 id="4-22"><a href="#4-22" class="headerlink" title="4.22"></a>4.22</h3><ol>
-<li><p>thumb through    翻阅</p>
-</li>
-<li><p>come upon   突然发现</p>
-</li>
-<li><p>come by   路过</p>
-</li>
-<li><p>fire off   射击，不停提问</p>
-</li>
-<li><p>lay off   解雇</p>
-</li>
-<li><p>lay down   躺下，放下</p>
-</li>
-<li><p>in effect = in fact  实际上</p>
-</li>
-<li><p>in question  考虑之中的，被谈论的</p>
-</li>
-<li><p>in order that  为了</p>
-</li>
-<li><p>so as that   只要</p>
-</li>
-<li><p>elaborate  vi.详尽说明；vt.详细制定；adj.复杂的，精心制作的</p>
-</li>
-</ol>
-<p>​     · elaborate on sth</p>
-<p>​      elaboration  n.精心制作;详细阐述</p>
-<ol start="12">
-<li>retreat  撤退</li>
-<li>dismissal  解雇，免职，开除</li>
-<li>elighten  启蒙   glisten 闪亮  illuminate 照亮</li>
-<li>-Would you mind……？ -Not at all.</li>
-<li>punctual 准时的</li>
-<li>recollection 回忆，记忆    memorization 记诵，暗记</li>
-<li>object to sth/<strong>sb doing</strong>   反对……</li>
-<li>of no avail  无效，不起作用</li>
-</ol>
-<p>​        avail of sth 利用</p>
-<p>​        avail sb 对某人起作用</p>
-<ol start="20">
-<li>utilize 利用</li>
-</ol>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>Web</tag>
       </tags>
   </entry>
   <entry>

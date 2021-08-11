@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>pxd&#39;s blog</title>
   <icon>http://example.com/icon.png</icon>
-  <subtitle>希望成为周更博主（咕）</subtitle>
+  <subtitle>我会上传一些猫猫图</subtitle>
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
@@ -38,19 +38,6 @@
     
     
     <category term="Web" scheme="http://example.com/tags/Web/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>学习规划</title>
-    <link href="http://example.com/2021/05/26/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/"/>
-    <id>http://example.com/2021/05/26/%E5%AD%A6%E4%B9%A0%E8%A7%84%E5%88%92/</id>
-    <published>2021-05-26T15:05:31.000Z</published>
-    <updated>2021-05-26T15:05:31.044Z</updated>
-    
-    
-    
-    
     
   </entry>
   

@@ -112,199 +112,6 @@
       </tags>
   </entry>
   <entry>
-    <title>二叉树的基本性质</title>
-    <url>/2021/04/03/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8/</url>
-    <content><![CDATA[<p>二叉树很常用，怕自己记不住，对它的基本性质和运算做一个梳理。</p>
-<a id="more"></a>
-
-<h3 id="基本性质"><a href="#基本性质" class="headerlink" title="基本性质"></a>基本性质</h3><p><strong>1.二叉树的第 i ( i  $\geq$ 1)层上最多有 $2^{i-1}$个结点。</strong></p>
-<blockquote>
-<p>第一层一个结点。每个结点最多两个孩子，因此下一行结点数最多是上一行的2倍。</p>
-</blockquote>
-<p><strong>2.高度为 h 的二叉树上至多有$2^h-1$ 个结点。</strong></p>
-<p>也就是每层结点都达到最多，等比数列求和:$$\sum^{h}_{i=1}{2^{i-1}}=2^h-1 $$</p>
-<p><strong>3.包含 n 个结点的二叉树的高度至少为$\lceil\log_2{(n+1)} \rceil$，至多为n。</strong></p>
-<blockquote>
-<p>高度最小时，每层的结点都达到最多，设层数为h，则$2^h-1=n$ ，解得 $h=log_2{(n+1)}$ </p>
-<p>由于h必须是整数，而$log_2{(n+1)}$ 不一定是整数，所以h还需向上取整。</p>
-<p>高度最大时，每层只有一个结点，高度就为n.</p>
-</blockquote>
-<p><strong>4.任意一颗二叉树中，若叶子结点的数量为$n_0$，度为2的结点数量为$n_2$，则$n_0$=$n_2+1$.</strong></p>
-<blockquote>
-<p>推理过程：</p>
-<p>二叉树仅包含度为0，1，2的三种结点。设二叉树总结点数为n，度为0个数$n_0$, 度为1个数$n_1$，度为2个数$n_2$，则有 $n=n_0+n_1+n_2$. 设二叉树边的数量为B，由于除了根结点，每个结点都有一条边进入，因此$B=n-1$.</p>
-<p>同时，度为1的结点发出1条边，度为2的结点发出2条边，还有$B=n_1+2n_2$.两式联立得$n=n_1+2n_2+1$.</p>
-<p>而前面得出$n=n_0+n_1+n_2$，消去n，就是$n_0$=$n_2+1$.</p>
-</blockquote>
-<h3 id="几种特殊二叉树"><a href="#几种特殊二叉树" class="headerlink" title="几种特殊二叉树"></a>几种特殊二叉树</h3><h4 id="满二叉树"><a href="#满二叉树" class="headerlink" title="满二叉树"></a>满二叉树</h4> <center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="http://data.biancheng.net/uploads/allimg/181226/2-1Q226195949495.gif">
-    <br>
-    <div style="color:orange;display: inline-block;color: #999;font-size:14px;
-    padding: 1px;">图1 满二叉树</div>
-</center>                                                                     
-
-<p>如果一个二叉树中除了叶子结点，每个结点的度都为 2，则此二叉树称为满二叉树。</p>
-<p>结合基本性质，满二叉树的第 i ( i  $\geq$ 1)层上有 $2^{i-1}$个结点，高度为 h 的满二叉树上有$2^h-1$ 个结点。</p>
-<h4 id="完全二叉树"><a href="#完全二叉树" class="headerlink" title="完全二叉树"></a>完全二叉树</h4><p>如果一个二叉树除去最后一层节点后为满二叉树，且最后一层的结点依次从左到右分布，则此二叉树被称为完全二叉树。</p>
- <center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="http://data.biancheng.net/uploads/allimg/181226/2-1Q22620003J18.gif">
-    <br>
-    <div style="color:orange;display: inline-block;color: #999;font-size:14px;
-    padding: 1px;">图2 完全和非完全二叉树比较</div>
-</center>                                                                     
-**性质**
-
-<ol>
-<li>含有n 个结点的完全二叉树的深度为 $\lceil\log_2{(n+1)} \rceil$；</li>
-<li>将一个包含n个结点的完全二叉树按照层次从左到右 ，从1到 i 依次给结点编号，对于任意一个结点 i ，完全二叉树还有以下几个结论成立：</li>
-</ol>
-<p>​     1）当 i &gt; 1 时，该结点父结点编号为 $\lfloor \frac{i}{2} \rfloor$ 。（i = 1 时，表示的是根结点，无父结点） </p>
-<p>​     2）如果 2i &gt; n ，则结点 i 肯定没有左孩子；否则其左孩子结点编号为2i 。</p>
-<p>​     3）如果 2<em>i+1&gt;n ，</em>则结点 i 肯定没有右孩子；否则右孩子结点编号为 2i+1 。</p>
-<blockquote>
-<p>课本是从0到 i-1 编号的，由于没找到对应的图，这里采用从1到 i 编号。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>C语言</category>
-      </categories>
-      <tags>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>二叉树的运算</title>
-    <url>/2021/04/12/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E8%BF%90%E7%AE%97/</url>
-    <content><![CDATA[<p>二叉树的结构体定义、创建二叉树、先序、中序、后序遍历运算。</p>
-<a id="more"></a>
-
-<h3 id="二叉树结点结构体"><a href="#二叉树结点结构体" class="headerlink" title="二叉树结点结构体"></a>二叉树结点结构体</h3><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">btnode</span>
-<span class="token punctuation">&#123;</span>
-    ElemType element<span class="token punctuation">;</span>         <span class="token comment">//数据域</span>
-    <span class="token keyword">struct</span> <span class="token class-name">btnode</span> <span class="token operator">*</span>lChild<span class="token punctuation">;</span>    <span class="token comment">//左子树</span>
-    <span class="token keyword">struct</span> <span class="token class-name">btnode</span> <span class="token operator">*</span>rChild<span class="token punctuation">;</span>    <span class="token comment">//右子树</span>
-<span class="token punctuation">&#125;</span>BTNode<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="二叉树结构体"><a href="#二叉树结构体" class="headerlink" title="二叉树结构体"></a>二叉树结构体</h3><p>只包含一个指向二叉树根节点的指针。</p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">binarytree</span>
-<span class="token punctuation">&#123;</span>
-    BTNode <span class="token operator">*</span>root<span class="token punctuation">;</span>           
-<span class="token punctuation">&#125;</span>BinaryTree<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="初始化二叉树"><a href="#初始化二叉树" class="headerlink" title="初始化二叉树"></a>初始化二叉树</h3><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">Create</span><span class="token punctuation">(</span>BinaryTree <span class="token operator">*</span>bt<span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-    bt<span class="token operator">-></span>root <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="创建新结点"><a href="#创建新结点" class="headerlink" title="创建新结点"></a>创建新结点</h3><pre class="line-numbers language-c" data-language="c"><code class="language-c">BTNode<span class="token operator">*</span> <span class="token function">NewNode</span><span class="token punctuation">(</span>ElemType x<span class="token punctuation">,</span> BTNode <span class="token operator">*</span>ln<span class="token punctuation">,</span> BTNode <span class="token operator">*</span>rn<span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-    BTNode <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token punctuation">(</span>BTNode<span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>BTNode<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//分配内存空间 </span>
-    p<span class="token operator">-></span>element <span class="token operator">=</span> x<span class="token punctuation">;</span>                             
-    p<span class="token operator">-></span>lChild <span class="token operator">=</span> ln<span class="token punctuation">;</span>                                
-    p<span class="token operator">-></span>rChild <span class="token operator">=</span> rn<span class="token punctuation">;</span>   
-    <span class="token keyword">return</span> p<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="返回根节点的值"><a href="#返回根节点的值" class="headerlink" title="返回根节点的值"></a>返回根节点的值</h3><pre class="line-numbers language-c" data-language="c"><code class="language-c">BOOL <span class="token function">Root</span><span class="token punctuation">(</span>BinaryTree <span class="token operator">*</span>bt<span class="token punctuation">,</span> ElemType <span class="token operator">*</span>x<span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>bt<span class="token operator">-></span>root<span class="token punctuation">)</span>
-    <span class="token punctuation">&#123;</span>
-        x <span class="token operator">=</span> <span class="token operator">&amp;</span>bt<span class="token operator">-></span>root<span class="token operator">-></span>element<span class="token punctuation">;</span>
-        
-        <span class="token keyword">return</span> TRUE<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token keyword">else</span>
-        <span class="token keyword">return</span> FALSE<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="构建二叉树"><a href="#构建二叉树" class="headerlink" title="构建二叉树"></a>构建二叉树</h3><p>也就是调用NewNode的完整过程。</p>
-<p>尤其要注意最后一行的<strong>left-&gt;root = right-&gt;root = NULL</strong>。</p>
-<blockquote>
-<p>书上的解释是，如果不让left和right成为空树，则左右子树会和新二叉树共享二叉树结点，然后就很危险，这真是什么也没说清楚，乌鱼子。</p>
-</blockquote>
-<p>解释一下，这是因为left和right本身也是一个独立的二叉树，原本各有一个根结点指针。合并成新二叉树的子树后，原本的入口就要关闭，只能允许它们的父结点指向自己。不然，程序通过原本left或者right自己的根指针就可以修改里面的数据，而我们希望的是只能从新的树的根结点进入。</p>
-<p>为什么成为空树就可以解决这个问题呢？不应该讲 “成为空树”，而是把原本的树的根指针设空，使这两个子树<strong>不可以作为独立的树被访问</strong>。</p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">MakeTree</span><span class="token punctuation">(</span>BinaryTree <span class="token operator">*</span>bt<span class="token punctuation">,</span> ElemType e<span class="token punctuation">,</span> BinaryTree <span class="token operator">*</span>left<span class="token punctuation">,</span> BinaryTree <span class="token operator">*</span>right<span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>bt<span class="token operator">-></span>root <span class="token operator">||</span> left <span class="token operator">==</span> right<span class="token punctuation">)</span>    <span class="token comment">//根节点不能为空，左右子树不可以是同一个子树</span>
-        <span class="token keyword">return</span><span class="token punctuation">;</span>    
-    bt<span class="token operator">-></span>root <span class="token operator">=</span> <span class="token function">NewNode</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span> left<span class="token operator">-></span>root<span class="token punctuation">,</span> right<span class="token operator">-></span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>    
-    left<span class="token operator">-></span>root <span class="token operator">=</span> right<span class="token operator">-></span>root <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span> <span class="token comment">//取消原树的指针</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="先序遍历（递归）"><a href="#先序遍历（递归）" class="headerlink" title="先序遍历（递归）"></a>先序遍历（递归）</h3><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">PreOrderTree</span><span class="token punctuation">(</span>BinaryTree <span class="token operator">*</span>bt<span class="token punctuation">)</span>     <span class="token comment">//用户接口</span>
-<span class="token punctuation">&#123;</span>
-    <span class="token function">PreOrder</span><span class="token punctuation">(</span>bt<span class="token operator">-></span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>             
-<span class="token punctuation">&#125;</span>
-
-<span class="token keyword">void</span> <span class="token function">PreOrder</span><span class="token punctuation">(</span>BTNode <span class="token operator">*</span>t<span class="token punctuation">)</span>              <span class="token comment">//程序接口</span>
-<span class="token punctuation">&#123;</span> 
-    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>t<span class="token punctuation">)</span>
-        <span class="token keyword">return</span><span class="token punctuation">;</span>
-    
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c"</span><span class="token punctuation">,</span> t<span class="token operator">-></span>element<span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">//这一行放在最前面：先序；放中间：中序；放最后：后序；</span>
-    <span class="token function">PreOrder</span><span class="token punctuation">(</span>t<span class="token operator">-></span>lChild<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">PreOrder</span><span class="token punctuation">(</span>t<span class="token operator">-></span>rChild<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="有趣的题型"><a href="#有趣的题型" class="headerlink" title="有趣的题型"></a>有趣的题型</h3><p><strong>性质：已知二叉树的先序序列和中序序列，或后序序列和中序序列，可以唯一确定一颗二叉树。</strong></p>
-<p>以已知先序序列和中序序列的情况为例，算法实现步骤如下：</p>
-<p>1）根据先序序列确定树的根结点</p>
-<p>2）根据根结点在中序序列中的位置划分出二叉树的左右子树包含哪些结点。</p>
-<p>  然后根据左、右字数结点在先序序列中的次序可以确定子树的根结点，即回到步骤 1）。</p>
-]]></content>
-      <categories>
-        <category>C语言</category>
-      </categories>
-      <tags>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>二级指针（转载）</title>
-    <url>/2021/05/22/%E4%BA%8C%E7%BA%A7%E6%8C%87%E9%92%88/</url>
-    <content><![CDATA[<p>做题时候碰到，感觉很有意思</p>
-<a id="more"></a>
-
-<h3 id="什么是二级指针"><a href="#什么是二级指针" class="headerlink" title="什么是二级指针"></a>什么是二级指针</h3><p>一级指针存放变量的地址，指向的值是变量的内容。如int* p={1,2,3}， p=数组的首地址，p=数组的第一个值；    二级指针存放一级指针的地址，指向一级指针。如int *p ={1,2,3}， int  ** pp=&amp;p，则pp=指针p的首地址，*pp=数组的首地址，**pp=数组第一个值1。     </p>
-<p>那么，在作为参数传递时什么时候用一级指针，什么时候用二级指针？</p>
-<h3 id="二级指针的应用"><a href="#二级指针的应用" class="headerlink" title="二级指针的应用"></a>二级指针的应用</h3><p>用二级指针作为函数参数，有两种典型情况：<br><strong>1.需要传递一级指针的数组时：</strong><br>例如，标准C的main函数：<br>int main(int argc, char*[] argv)，数组最高维可以退化，char*[] argv等价于char** argv。这里argv代表命令行参数数组。<br><strong>2.需要对传入的一级指针进行修改时：</strong><br>例如：</p>
-<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">alloc_new_char_array</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span>t<span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
- <span class="token operator">*</span>t <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">char</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span>n <span class="token operator">*</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>这里可以通过返回值达到相同的效果，不过需要同时修改多个指针的时候就不能用返回值了。另外，C++中可以用引用代替，本质上和这里的修改指针的方法相同。</p>
-<p>类似地，一级指针作为参数则用来传递非指针数组，以及对非指针对象进行修改。</p>
-<hr>
-<p>指针数组的数组名传递参数对应为指针的指针，即二级指针，二维数组的数组名传递参数对应为数组指针，即指向一维数组的指针。</p>
-<p>一级指针通过形参，可以修改实参中指针所指向的地址中的值，修改不了实参中指针所指向的地址，需要借助二级指针才可以。</p>
-<p> <strong>简而言之，二级指针调用，传递的是一级指针的地址。</strong></p>
-]]></content>
-      <categories>
-        <category>C语言</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>期中复习计划</title>
-    <url>/2021/04/10/%E5%A4%8D%E4%B9%A0%E8%AE%A1%E5%88%92/</url>
-    <content><![CDATA[<p>快期中考了。</p>
-<a id="more"></a>
-
-<h3 id="大物"><a href="#大物" class="headerlink" title="大物"></a><strong>大物</strong></h3><p>1.公式记牢；</p>
-<p>2.本周末将练习册上的错题过一遍；</p>
-<p>3.看上课的PPT上的例题，再自己做一遍;</p>
-<p>4.做习题分析上的题+买卷子做（待定）；</p>
-<h3 id="高数"><a href="#高数" class="headerlink" title="高数"></a>高数</h3><p>1.刷书后习题；单独写在纸上，不要写在书上；</p>
-<p>2.练习册不会的题重做；</p>
-<p>3.本周末把上课的ppt重看；</p>
-<p>4.期中考前尽量做到ppt上例题每题过一遍，书后习题做一遍;</p>
-<p>5.买卷子做（待定）；</p>
-<h3 id="六级"><a href="#六级" class="headerlink" title="六级"></a>六级</h3><p>1.墨墨背单词，每天50（包括复习）；</p>
-<p>2.听力，每天2-3篇，错题重听；</p>
-<p>3.积累作文表达，每天3句，写到博客里；</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
     <title>单链表</title>
     <url>/2021/04/06/%E5%8D%95%E9%93%BE%E8%A1%A8/</url>
     <content><![CDATA[<p>老是碰见链表……决定还是写一下，方便复习。</p>
@@ -428,6 +235,152 @@
       </tags>
   </entry>
   <entry>
+    <title>二叉树的运算</title>
+    <url>/2021/04/12/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E8%BF%90%E7%AE%97/</url>
+    <content><![CDATA[<p>二叉树的结构体定义、创建二叉树、先序、中序、后序遍历运算。</p>
+<a id="more"></a>
+
+<h3 id="二叉树结点结构体"><a href="#二叉树结点结构体" class="headerlink" title="二叉树结点结构体"></a>二叉树结点结构体</h3><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">btnode</span>
+<span class="token punctuation">&#123;</span>
+    ElemType element<span class="token punctuation">;</span>         <span class="token comment">//数据域</span>
+    <span class="token keyword">struct</span> <span class="token class-name">btnode</span> <span class="token operator">*</span>lChild<span class="token punctuation">;</span>    <span class="token comment">//左子树</span>
+    <span class="token keyword">struct</span> <span class="token class-name">btnode</span> <span class="token operator">*</span>rChild<span class="token punctuation">;</span>    <span class="token comment">//右子树</span>
+<span class="token punctuation">&#125;</span>BTNode<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="二叉树结构体"><a href="#二叉树结构体" class="headerlink" title="二叉树结构体"></a>二叉树结构体</h3><p>只包含一个指向二叉树根节点的指针。</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">binarytree</span>
+<span class="token punctuation">&#123;</span>
+    BTNode <span class="token operator">*</span>root<span class="token punctuation">;</span>           
+<span class="token punctuation">&#125;</span>BinaryTree<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="初始化二叉树"><a href="#初始化二叉树" class="headerlink" title="初始化二叉树"></a>初始化二叉树</h3><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">Create</span><span class="token punctuation">(</span>BinaryTree <span class="token operator">*</span>bt<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    bt<span class="token operator">-></span>root <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="创建新结点"><a href="#创建新结点" class="headerlink" title="创建新结点"></a>创建新结点</h3><pre class="line-numbers language-c" data-language="c"><code class="language-c">BTNode<span class="token operator">*</span> <span class="token function">NewNode</span><span class="token punctuation">(</span>ElemType x<span class="token punctuation">,</span> BTNode <span class="token operator">*</span>ln<span class="token punctuation">,</span> BTNode <span class="token operator">*</span>rn<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    BTNode <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token punctuation">(</span>BTNode<span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>BTNode<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//分配内存空间 </span>
+    p<span class="token operator">-></span>element <span class="token operator">=</span> x<span class="token punctuation">;</span>                             
+    p<span class="token operator">-></span>lChild <span class="token operator">=</span> ln<span class="token punctuation">;</span>                                
+    p<span class="token operator">-></span>rChild <span class="token operator">=</span> rn<span class="token punctuation">;</span>   
+    <span class="token keyword">return</span> p<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="返回根节点的值"><a href="#返回根节点的值" class="headerlink" title="返回根节点的值"></a>返回根节点的值</h3><pre class="line-numbers language-c" data-language="c"><code class="language-c">BOOL <span class="token function">Root</span><span class="token punctuation">(</span>BinaryTree <span class="token operator">*</span>bt<span class="token punctuation">,</span> ElemType <span class="token operator">*</span>x<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>bt<span class="token operator">-></span>root<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        x <span class="token operator">=</span> <span class="token operator">&amp;</span>bt<span class="token operator">-></span>root<span class="token operator">-></span>element<span class="token punctuation">;</span>
+        
+        <span class="token keyword">return</span> TRUE<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">else</span>
+        <span class="token keyword">return</span> FALSE<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="构建二叉树"><a href="#构建二叉树" class="headerlink" title="构建二叉树"></a>构建二叉树</h3><p>也就是调用NewNode的完整过程。</p>
+<p>尤其要注意最后一行的<strong>left-&gt;root = right-&gt;root = NULL</strong>。</p>
+<blockquote>
+<p>书上的解释是，如果不让left和right成为空树，则左右子树会和新二叉树共享二叉树结点，然后就很危险，这真是什么也没说清楚，乌鱼子。</p>
+</blockquote>
+<p>解释一下，这是因为left和right本身也是一个独立的二叉树，原本各有一个根结点指针。合并成新二叉树的子树后，原本的入口就要关闭，只能允许它们的父结点指向自己。不然，程序通过原本left或者right自己的根指针就可以修改里面的数据，而我们希望的是只能从新的树的根结点进入。</p>
+<p>为什么成为空树就可以解决这个问题呢？不应该讲 “成为空树”，而是把原本的树的根指针设空，使这两个子树<strong>不可以作为独立的树被访问</strong>。</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">MakeTree</span><span class="token punctuation">(</span>BinaryTree <span class="token operator">*</span>bt<span class="token punctuation">,</span> ElemType e<span class="token punctuation">,</span> BinaryTree <span class="token operator">*</span>left<span class="token punctuation">,</span> BinaryTree <span class="token operator">*</span>right<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>bt<span class="token operator">-></span>root <span class="token operator">||</span> left <span class="token operator">==</span> right<span class="token punctuation">)</span>    <span class="token comment">//根节点不能为空，左右子树不可以是同一个子树</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>    
+    bt<span class="token operator">-></span>root <span class="token operator">=</span> <span class="token function">NewNode</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span> left<span class="token operator">-></span>root<span class="token punctuation">,</span> right<span class="token operator">-></span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    left<span class="token operator">-></span>root <span class="token operator">=</span> right<span class="token operator">-></span>root <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span> <span class="token comment">//取消原树的指针</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="先序遍历（递归）"><a href="#先序遍历（递归）" class="headerlink" title="先序遍历（递归）"></a>先序遍历（递归）</h3><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">PreOrderTree</span><span class="token punctuation">(</span>BinaryTree <span class="token operator">*</span>bt<span class="token punctuation">)</span>     <span class="token comment">//用户接口</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token function">PreOrder</span><span class="token punctuation">(</span>bt<span class="token operator">-></span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>             
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">void</span> <span class="token function">PreOrder</span><span class="token punctuation">(</span>BTNode <span class="token operator">*</span>t<span class="token punctuation">)</span>              <span class="token comment">//程序接口</span>
+<span class="token punctuation">&#123;</span> 
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>t<span class="token punctuation">)</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c"</span><span class="token punctuation">,</span> t<span class="token operator">-></span>element<span class="token punctuation">)</span><span class="token punctuation">;</span>         <span class="token comment">//这一行放在最前面：先序；放中间：中序；放最后：后序；</span>
+    <span class="token function">PreOrder</span><span class="token punctuation">(</span>t<span class="token operator">-></span>lChild<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">PreOrder</span><span class="token punctuation">(</span>t<span class="token operator">-></span>rChild<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="有趣的题型"><a href="#有趣的题型" class="headerlink" title="有趣的题型"></a>有趣的题型</h3><p><strong>性质：已知二叉树的先序序列和中序序列，或后序序列和中序序列，可以唯一确定一颗二叉树。</strong></p>
+<p>以已知先序序列和中序序列的情况为例，算法实现步骤如下：</p>
+<p>1）根据先序序列确定树的根结点</p>
+<p>2）根据根结点在中序序列中的位置划分出二叉树的左右子树包含哪些结点。</p>
+<p>  然后根据左、右字数结点在先序序列中的次序可以确定子树的根结点，即回到步骤 1）。</p>
+]]></content>
+      <categories>
+        <category>C语言</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>二叉树的基本性质</title>
+    <url>/2021/04/03/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8/</url>
+    <content><![CDATA[<p>二叉树很常用，怕自己记不住，对它的基本性质和运算做一个梳理。</p>
+<a id="more"></a>
+
+<h3 id="基本性质"><a href="#基本性质" class="headerlink" title="基本性质"></a>基本性质</h3><p><strong>1.二叉树的第 i ( i  $\geq$ 1)层上最多有 $2^{i-1}$个结点。</strong></p>
+<blockquote>
+<p>第一层一个结点。每个结点最多两个孩子，因此下一行结点数最多是上一行的2倍。</p>
+</blockquote>
+<p><strong>2.高度为 h 的二叉树上至多有$2^h-1$ 个结点。</strong></p>
+<p>也就是每层结点都达到最多，等比数列求和:$$\sum^{h}_{i=1}{2^{i-1}}=2^h-1 $$</p>
+<p><strong>3.包含 n 个结点的二叉树的高度至少为$\lceil\log_2{(n+1)} \rceil$，至多为n。</strong></p>
+<blockquote>
+<p>高度最小时，每层的结点都达到最多，设层数为h，则$2^h-1=n$ ，解得 $h=log_2{(n+1)}$ </p>
+<p>由于h必须是整数，而$log_2{(n+1)}$ 不一定是整数，所以h还需向上取整。</p>
+<p>高度最大时，每层只有一个结点，高度就为n.</p>
+</blockquote>
+<p><strong>4.任意一颗二叉树中，若叶子结点的数量为$n_0$，度为2的结点数量为$n_2$，则$n_0$=$n_2+1$.</strong></p>
+<blockquote>
+<p>推理过程：</p>
+<p>二叉树仅包含度为0，1，2的三种结点。设二叉树总结点数为n，度为0个数$n_0$, 度为1个数$n_1$，度为2个数$n_2$，则有 $n=n_0+n_1+n_2$. 设二叉树边的数量为B，由于除了根结点，每个结点都有一条边进入，因此$B=n-1$.</p>
+<p>同时，度为1的结点发出1条边，度为2的结点发出2条边，还有$B=n_1+2n_2$.两式联立得$n=n_1+2n_2+1$.</p>
+<p>而前面得出$n=n_0+n_1+n_2$，消去n，就是$n_0$=$n_2+1$.</p>
+</blockquote>
+<h3 id="几种特殊二叉树"><a href="#几种特殊二叉树" class="headerlink" title="几种特殊二叉树"></a>几种特殊二叉树</h3><h4 id="满二叉树"><a href="#满二叉树" class="headerlink" title="满二叉树"></a>满二叉树</h4> <center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="http://data.biancheng.net/uploads/allimg/181226/2-1Q226195949495.gif">
+    <br>
+    <div style="color:orange;display: inline-block;color: #999;font-size:14px;
+    padding: 1px;">图1 满二叉树</div>
+</center>                                                                     
+
+<p>如果一个二叉树中除了叶子结点，每个结点的度都为 2，则此二叉树称为满二叉树。</p>
+<p>结合基本性质，满二叉树的第 i ( i  $\geq$ 1)层上有 $2^{i-1}$个结点，高度为 h 的满二叉树上有$2^h-1$ 个结点。</p>
+<h4 id="完全二叉树"><a href="#完全二叉树" class="headerlink" title="完全二叉树"></a>完全二叉树</h4><p>如果一个二叉树除去最后一层节点后为满二叉树，且最后一层的结点依次从左到右分布，则此二叉树被称为完全二叉树。</p>
+ <center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    src="http://data.biancheng.net/uploads/allimg/181226/2-1Q22620003J18.gif">
+    <br>
+    <div style="color:orange;display: inline-block;color: #999;font-size:14px;
+    padding: 1px;">图2 完全和非完全二叉树比较</div>
+</center>                                                                     
+**性质**
+
+<ol>
+<li>含有n 个结点的完全二叉树的深度为 $\lceil\log_2{(n+1)} \rceil$；</li>
+<li>将一个包含n个结点的完全二叉树按照层次从左到右 ，从1到 i 依次给结点编号，对于任意一个结点 i ，完全二叉树还有以下几个结论成立：</li>
+</ol>
+<p>​     1）当 i &gt; 1 时，该结点父结点编号为 $\lfloor \frac{i}{2} \rfloor$ 。（i = 1 时，表示的是根结点，无父结点） </p>
+<p>​     2）如果 2i &gt; n ，则结点 i 肯定没有左孩子；否则其左孩子结点编号为2i 。</p>
+<p>​     3）如果 2<em>i+1&gt;n ，</em>则结点 i 肯定没有右孩子；否则右孩子结点编号为 2i+1 。</p>
+<blockquote>
+<p>课本是从0到 i-1 编号的，由于没找到对应的图，这里采用从1到 i 编号。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>C语言</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>二次积分转化极坐标形式</title>
     <url>/2021/04/11/%E4%BA%8C%E6%AC%A1%E7%A7%AF%E5%88%86%E8%BD%AC%E5%8C%96%E6%9E%81%E5%9D%90%E6%A0%87%E5%BD%A2%E5%BC%8F/</url>
     <content><![CDATA[<blockquote>
@@ -448,6 +401,53 @@
       <tags>
         <tag>高等数学</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>二级指针（转载）</title>
+    <url>/2021/05/22/%E4%BA%8C%E7%BA%A7%E6%8C%87%E9%92%88/</url>
+    <content><![CDATA[<p>做题时候碰到，感觉很有意思</p>
+<a id="more"></a>
+
+<h3 id="什么是二级指针"><a href="#什么是二级指针" class="headerlink" title="什么是二级指针"></a>什么是二级指针</h3><p>一级指针存放变量的地址，指向的值是变量的内容。如int* p={1,2,3}， p=数组的首地址，p=数组的第一个值；    二级指针存放一级指针的地址，指向一级指针。如int *p ={1,2,3}， int  ** pp=&amp;p，则pp=指针p的首地址，*pp=数组的首地址，**pp=数组第一个值1。     </p>
+<p>那么，在作为参数传递时什么时候用一级指针，什么时候用二级指针？</p>
+<h3 id="二级指针的应用"><a href="#二级指针的应用" class="headerlink" title="二级指针的应用"></a>二级指针的应用</h3><p>用二级指针作为函数参数，有两种典型情况：<br><strong>1.需要传递一级指针的数组时：</strong><br>例如，标准C的main函数：<br>int main(int argc, char*[] argv)，数组最高维可以退化，char*[] argv等价于char** argv。这里argv代表命令行参数数组。<br><strong>2.需要对传入的一级指针进行修改时：</strong><br>例如：</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">alloc_new_char_array</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span>t<span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+ <span class="token operator">*</span>t <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">char</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span>n <span class="token operator">*</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这里可以通过返回值达到相同的效果，不过需要同时修改多个指针的时候就不能用返回值了。另外，C++中可以用引用代替，本质上和这里的修改指针的方法相同。</p>
+<p>类似地，一级指针作为参数则用来传递非指针数组，以及对非指针对象进行修改。</p>
+<hr>
+<p>指针数组的数组名传递参数对应为指针的指针，即二级指针，二维数组的数组名传递参数对应为数组指针，即指向一维数组的指针。</p>
+<p>一级指针通过形参，可以修改实参中指针所指向的地址中的值，修改不了实参中指针所指向的地址，需要借助二级指针才可以。</p>
+<p> <strong>简而言之，二级指针调用，传递的是一级指针的地址。</strong></p>
+]]></content>
+      <categories>
+        <category>C语言</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>期中复习计划</title>
+    <url>/2021/04/10/%E5%A4%8D%E4%B9%A0%E8%AE%A1%E5%88%92/</url>
+    <content><![CDATA[<p>快期中考了。</p>
+<a id="more"></a>
+
+<h3 id="大物"><a href="#大物" class="headerlink" title="大物"></a><strong>大物</strong></h3><p>1.公式记牢；</p>
+<p>2.本周末将练习册上的错题过一遍；</p>
+<p>3.看上课的PPT上的例题，再自己做一遍;</p>
+<p>4.做习题分析上的题+买卷子做（待定）；</p>
+<h3 id="高数"><a href="#高数" class="headerlink" title="高数"></a>高数</h3><p>1.刷书后习题；单独写在纸上，不要写在书上；</p>
+<p>2.练习册不会的题重做；</p>
+<p>3.本周末把上课的ppt重看；</p>
+<p>4.期中考前尽量做到ppt上例题每题过一遍，书后习题做一遍;</p>
+<p>5.买卷子做（待定）；</p>
+<h3 id="六级"><a href="#六级" class="headerlink" title="六级"></a>六级</h3><p>1.墨墨背单词，每天50（包括复习）；</p>
+<p>2.听力，每天2-3篇，错题重听；</p>
+<p>3.积累作文表达，每天3句，写到博客里；</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
   </entry>
   <entry>
     <title>指针数组与数组指针(转载)</title>

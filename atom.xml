@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>pxd&#39;s blog</title>
   <icon>http://example.com/icon.png</icon>
-  <subtitle>某二刺螈的精神领域</subtitle>
+  <subtitle>计算机研0的学习脚印</subtitle>
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
@@ -10,7 +10,7 @@
   <id>http://example.com/</id>
   
   <author>
-    <name>Lumos</name>
+    <name>Paradox</name>
     
   </author>
   

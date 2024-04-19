@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-03-21T14:43:48.500Z</updated>
+  <updated>2024-04-19T09:45:13.808Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>雅思口语准备</title>
+    <link href="http://example.com/2024/04/19/%E9%9B%85%E6%80%9D%E5%8F%A3%E8%AF%AD%E5%87%86%E5%A4%87/"/>
+    <id>http://example.com/2024/04/19/%E9%9B%85%E6%80%9D%E5%8F%A3%E8%AF%AD%E5%87%86%E5%A4%87/</id>
+    <published>2024-04-19T09:33:26.000Z</published>
+    <updated>2024-04-19T09:45:13.808Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;4月的笔试，但口语被安排到5月，心累，真的要freestyle？&lt;/p&gt;
+&lt;p&gt;（待更新，记录一些skill）&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    
+    <category term="English" scheme="http://example.com/tags/English/"/>
+    
+  </entry>
+  
+  <entry>
     <title>第一篇博文</title>
     <link href="http://example.com/2021/01/23/first/"/>
     <id>http://example.com/2021/01/23/first/</id>
     <published>2021-01-23T07:39:26.000Z</published>
-    <updated>2021-03-21T14:43:48.500Z</updated>
+    <updated>2024-04-19T09:25:13.432Z</updated>
     
     
       

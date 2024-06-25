@@ -156,7 +156,7 @@
       <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
-          2024-06-25 12:41:15
+          2024-06-25 22:59:40
         </span>
         
               <span class="post-tags">
@@ -268,20 +268,20 @@
 <p>证明过程，假设在第$\iota^* $轮实现了最优解，如何求出$\iota^* $，找出了$\iota^* $的上限（略）</p>
 <p>$ \alpha = \left\lfloor \log \frac{w(J) - \log w_{\text{min}}}{\log \gamma - \log(\gamma - 1)} \right\rfloor + 1 $</p>
 <p>其中，$𝑤(𝐽)$ 表示作业集合$ 𝐽$的<strong>总权重</strong>，因为$w(J^*<em>{i1})$未知，只能用作业集合总权重估计。$𝑤</em>{min}$表示作业的最小权重，$𝛾$ 是算法中的近似比率。</p>
-<h4 id="第五节"><a href="#第五节" class="headerlink" title="第五节"></a>第五节</h4><h5 id="公式7："><a href="#公式7：" class="headerlink" title="公式7："></a>公式7：</h5><p>最大化在时间 $\tau_i$ 内完成的作业集合 $J_i$ 中作业的总权重：<br>$$\max ∑<em>{j \in [J_i]} ∑_{t \in [\tau_i]} w_j x</em>{jt}$$  （7）</p>
+<h4 id="第五节"><a href="#第五节" class="headerlink" title="第五节"></a>第五节</h4><h5 id="公式7："><a href="#公式7：" class="headerlink" title="公式7："></a>公式7：</h5><p>最大化在时间 $\tau_i$ 内完成的作业集合 $J_i$ 中作业的总权重：<br>$\max ∑<em>{j \in [J_i]} ∑_{t \in [\tau_i]} w_j x</em>{jt}$  （7）</p>
 <p>约束条件：</p>
 <ol>
-<li><p>每个作业 $j$ 在时间 $\tau_i$ 内的总工作量不超过1：<br>$$∑_{t \in [\tau_i]} x_{jt} \leq 1, \forall j \in [J_i] \quad (7a)$$</p>
+<li><p>每个作业 $j$ 在时间 $\tau_i$ 内的总工作量不超过1：<br>$∑_{t \in [\tau_i]} x_{jt} \leq 1, \forall j \in [J_i] \quad (7a)$</p>
 </li>
-<li><p>每个作业 $j$ 在时间 $\tau_i$ 内的工作量乘以完成时间不超过 $\tau_i$：<br>$$∑_{t \in [\tau_i]} x_{jt} (t + d_j) \leq \tau_i, \forall j \in [J_i] \quad (7b)$$</p>
+<li><p>每个作业 $j$ 在时间 $\tau_i$ 内的工作量乘以完成时间不超过 $\tau_i$：<br>$∑_{t \in [\tau_i]} x_{jt} (t + d_j) \leq \tau_i, \forall j \in [J_i] \quad (7b)$</p>
 </li>
 </ol>
 <p>这个优化问题的目标是在给定时间 $\tau_i$ 内最大化作业集合 $J_i$ 中作业的总权重，同时满足每个作业的工作量不超过1，并且工作量乘以完成时间不超过总时间 $\tau_i$</p>
-<h5 id="公式8："><a href="#公式8：" class="headerlink" title="公式8："></a>公式8：</h5><p>最大化作业集合 $J_i$ 中作业的总权重：$$\max ∑<em>{j \in [J_i]} ∑_{l \in \Gamma_j} w_j x</em>{jl} \quad (8)$$</p>
+<h5 id="公式8："><a href="#公式8：" class="headerlink" title="公式8："></a>公式8：</h5><p>最大化作业集合 $J_i$ 中作业的总权重：$\max ∑<em>{j \in [J_i]} ∑_{l \in \Gamma_j} w_j x</em>{jl} \quad (8)$</p>
 <p>约束条件：</p>
 <ol>
-<li>每个作业 $j$ 在时间 $t$、资源类型 $r$、服务器 $h$ 上的工作量不超过资源限制 $Cr_h$：（资源占用情况）<br>$$∑<em>{j \in [J_i]} ∑_{l : t \in T(l), h \in l} x</em>{jl} f_{rjh}(l) \leq Cr_h, \forall t \in [\tau_i], r \in [R], h \in [H] \quad (8a)$$</li>
-<li>每个作业 $j$ 的总工作量不超过1，确保每个作业最多按照一个时间表执行：<br>$$∑_{l \in \Gamma_j} x_{jl} \leq 1, \forall j \in [J_i] \quad (8b)$$</li>
+<li>每个作业 $j$ 在时间 $t$、资源类型 $r$、服务器 $h$ 上的工作量不超过资源限制 $Cr_h$：（资源占用情况）<br>$∑<em>{j \in [J_i]} ∑_{l : t \in T(l), h \in l} x</em>{jl} f_{rjh}(l) \leq Cr_h, \forall t \in [\tau_i], r \in [R], h \in [H] \quad (8a)$</li>
+<li>每个作业 $j$ 的总工作量不超过1，确保每个作业最多按照一个时间表执行：<br>$∑_{l \in \Gamma_j} x_{jl} \leq 1, \forall j \in [J_i] \quad (8b)$</li>
 <li>二进制变量：$x_{jl} \in {0, 1}, \forall j \in [J_i], l \in \Gamma_j \quad (8c)$     ，$x_{jl}$表示 job j 是否按照 schedule l∈𝛤𝑗进行调度</li>
 </ol>
 <p>这个优化问题的目标是在满足资源限制的情况下，最大化作业集合 $J_i$ 中作业的总权重，同时确保每个作业的工作量不超过1。</p>
@@ -552,7 +552,7 @@
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime mr-10" title="更新时间"></i>
-              2024-06-25 12:41:15
+              2024-06-25 22:59:40
             </span>
             
                   <span class="post-tags">

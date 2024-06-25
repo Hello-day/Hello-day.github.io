@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-04-19T09:45:13.808Z</updated>
+  <updated>2024-06-25T04:20:18.327Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,27 +17,27 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>雅思口语准备</title>
-    <link href="http://example.com/2024/04/19/%E9%9B%85%E6%80%9D%E5%8F%A3%E8%AF%AD%E5%87%86%E5%A4%87/"/>
-    <id>http://example.com/2024/04/19/%E9%9B%85%E6%80%9D%E5%8F%A3%E8%AF%AD%E5%87%86%E5%A4%87/</id>
-    <published>2024-04-19T09:33:26.000Z</published>
-    <updated>2024-04-19T09:45:13.808Z</updated>
+    <title>读导师论文的笔记</title>
+    <link href="http://example.com/2024/06/25/%E7%AC%94%E8%AE%B0/"/>
+    <id>http://example.com/2024/06/25/%E7%AC%94%E8%AE%B0/</id>
+    <published>2024-06-25T04:15:33.000Z</published>
+    <updated>2024-06-25T04:20:18.327Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;4月的笔试，但口语被安排到5月，心累，真的要freestyle？&lt;/p&gt;
-&lt;p&gt;（待更新，记录一些skill）&lt;/p&gt;
-</summary>
+    <summary type="html">&lt;h3 id=&quot;《Online-Scheduling-of-Heterogeneous-Distributed-Machine-Learning-Jobs》&quot;&gt;&lt;a</summary>
         
       
     
     
     
+    <category term="学习" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="English" scheme="http://example.com/tags/English/"/>
+    
+    <category term="Searching" scheme="http://example.com/tags/Searching/"/>
     
   </entry>
   

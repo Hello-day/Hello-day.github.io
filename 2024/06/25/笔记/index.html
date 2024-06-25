@@ -10,7 +10,7 @@ html.dataset.dark = localStorage.dark;
 });</script><meta name="generator" content="Hexo 5.3.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">读导师论文的笔记</h1><a id="logo" href="/.">pxd's blog</a><p class="description">计算机研0的学习脚印</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/tags/"><i class="fa fa-tag"> 标签</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">读导师论文的笔记</h1><div class="post-meta">2024-06-25<span> | </span><span class="category"><a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></span><span class="post-time"><span class="post-meta-item-text"> | </span><span class="post-meta-item-icon"><i class="fa fa-keyboard-o"></i><span class="post-count"> 8.8k</span><span class="post-meta-item-text"> 字</span></span></span><span class="post-time"> | <span class="post-meta-item-icon"><i class="fa fa-clock-o"></i><span class="post-count"> 32</span><span class="post-meta-item-text"> 分钟</span></span></span></div><a class="disqus-comment-count" href="/2024/06/25/%E7%AC%94%E8%AE%B0/#waline"><span class="waline-comment-count" id="/2024/06/25/%E7%AC%94%E8%AE%B0/"></span><span> 条评论</span></a><div class="post-content"><h3 id="《Online-Scheduling-of-Heterogeneous-Distributed-Machine-Learning-Jobs》"><a href="#《Online-Scheduling-of-Heterogeneous-Distributed-Machine-Learning-Jobs》" class="headerlink" title="《Online Scheduling of Heterogeneous Distributed Machine Learning Jobs》"></a>《Online Scheduling of Heterogeneous Distributed Machine Learning Jobs》</h3><h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ul>
 <li><p> <strong>主题</strong>：分布式机器学习任务中的在线调度问题</p>
 </li>
-<li><p> <strong>问题</strong>:  考虑到需求弹性，在资源有限的情况下，如何确定分配给每个作业的worker和ps的数量、类型以及运行时间，从而最大限度地利用资源，<strong>最小化平均加 权完成时间</strong>?</p>
+<li><p> <strong>问题</strong>:  考虑到需求弹性，在资源有限的情况下，如何确定分配给每个作业的worker和ps的数量、类型以及运行时间，从而最大限度地利用资源，<strong>最小化平均加权完成时间</strong>?</p>
 </li>
 <li><p><strong>方法（解决步骤）</strong>：</p>
 <p>1、先将平均加权完成时间最小化问题表述为一个时间索引的数学程序（3.3系统建模）</p>
@@ -87,7 +87,7 @@ html.dataset.dark = localStorage.dark;
 <ul>
 <li><p>$ A_{dual} $算法基于一个 <strong>γ-近似算法</strong>，用于解决最大权重调度问题，即在截止时间之前尽可能安排尚未安排的作业。</p>
 <ul>
-<li>在算法中，通过调用 γ-近似算法 $ A_{maxweight} $来执行 α 轮。在第$ ι$ 轮（其中$ ι （iota）∈ [α]$）中，从时间$ (ι-1)τ_i + 1 $到时间$ ιτ_i $安排作业集合$ Ji$ \ $J^s_i$, 即第$ ι $轮中在$ Ji $中但在之前的轮次中尚未服务的作业。每一轮运行长度不超过$ ατ_i$的作业，从而满足各种作业长度的需要（？）；</li>
+<li>在算法中，通过调用 γ-近似算法 $ A_{maxweight} $来执行 α 轮。在第$ ι$ 轮（其中$ ι （iota）∈ [α]$）中，从时间$ (ι-1)τ_i + 1 $到时间$ ιτ_i $安排作业集合$ Ji$ \ $J^s_i$, 即第$ ι $轮中在$ Ji $中但在之前的轮次中尚未服务的作业。每一轮运行长度不超过$ ατ_i$的作业，从而满足各种作业长度的需要；</li>
 </ul>
 </li>
 <li><p>$ A_{dual} $构建出一个所需的调度方案，其长度最多为$ ατ_i$，总权重至少等于相应最大权重调度问题的最优目标值。</p>
@@ -122,7 +122,6 @@ html.dataset.dark = localStorage.dark;
 <p>这个优化问题的目标是在满足资源限制的情况下，最大化作业集合 $J_i$ 中作业的总权重，同时确保每个作业的工作量不超过1。</p>
 <h5 id="引入对偶变量，公式9："><a href="#引入对偶变量，公式9：" class="headerlink" title="引入对偶变量，公式9："></a>引入对偶变量，公式9：</h5><p>总权重最大化问题转换成资源成本最小问题。原因：给定有限的资源，调度效用更高的作业</p>
 <h5 id="作业权重减去作业所需资源成本的值越大，越不浪费，可以构造调度"><a href="#作业权重减去作业所需资源成本的值越大，越不浪费，可以构造调度" class="headerlink" title="作业权重减去作业所需资源成本的值越大，越不浪费，可以构造调度"></a><strong>作业权重减去作业所需资源成本的值越大，越不浪费，可以构造调度</strong></h5><p>最小化目标函数：$\sum_{j \in [J_i]} u_j + \sum_{t \in [\tau_i]} \sum_{h \in [H]} \sum_{r \in [R]} \delta_r^h(t) C_r^h$</p>
-<p><img src="C:\Users\潘潘\Desktop\2.jpg"></p>
 <p>对偶线性规划的目标：</p>
 <ul>
 <li>目标：<strong>最小化作业效用和资源成本之和</strong>。</li>
@@ -310,26 +309,43 @@ html.dataset.dark = localStorage.dark;
 </li>
 </ol>
 <ul>
-<li>$[X]$: 整数集合 ${1, 2, \ldots, X}$</li>
-<li>$J, S, T$: 作业数量、物理服务器数量和时间槽数量</li>
-<li>$j, s, t$: 作业、物理服务器和时间槽的索引</li>
-<li>$W, P$: 工作者和参数服务器类型的数量</li>
-<li>$r_j$: 作业 $j$ 的到达时间</li>
-<li>$f_j(\cdot)$: 作业 $j$ 的效用函数</li>
-<li>$C_{sw}, C_{sp}$: 服务器 $s$ 上类型-$w$工作者和类型-$p$参数服务器的数量</li>
-<li>$E_j, D_j, M_j$: 作业 $j$ 中训练轮数、数据块数量和每个数据块中的小批次数量</li>
-<li>$\Delta^\uparrow_{js}$: 将作业 $j$ 的一个数据块传输到服务器 $s$ 的延迟时间</li>
-<li>$b_w, b_p$: 类型-$w$工作者和类型-$p$参数服务器的带宽</li>
-<li>$x_j$: 接受作业 $j$ 的决策变量</li>
-<li>$o_{jw}, o_{jp}$: 作业 $j$ 是否使用类型-$w$工作者和类型-$p$参数服务器</li>
-<li>$y_{jsw}(t)$: 服务器 $s$ 在时间 $t$ 分配给作业 $j$ 的类型-$w$工作者数量</li>
-<li>$z_{jsp}(t)$: 服务器 $s$ 在时间 $t$ 分配给作业 $j$ 的类型-$p$参数服务器数量</li>
-<li>$p_j$: 作业 $j$ 被接受时应支付的费用</li>
-<li>$a_j, \hat{t}_j$: 作业 $j$ 的开始和完成时间</li>
-<li>$\psi_j$: 作业 $j$ 的工作者和参数服务器是否放置在一起</li>
-<li>$k_{wpj}$: 作业 $j$ 使用类型-$w$工作者和类型-$p$参数服务器训练一个小批次的时间</li>
+<li><p>$[X]$: 整数集合 ${1, 2, \ldots, X}$</p>
+</li>
+<li><p>$J, S, T$: 作业数量、物理服务器数量和时间槽数量</p>
+</li>
+<li><p>$j, s, t$: 作业、物理服务器和时间槽的索引</p>
+</li>
+<li><p>$W, P$: 工作者和参数服务器类型的数量</p>
+</li>
+<li><p>$r_j$: 作业 $j$ 的到达时间</p>
+</li>
+<li><p>$f_j(\cdot)$: 作业 $j$ 的效用函数</p>
+</li>
+<li><p>$C_{sw}, C_{sp}$: 服务器 $s$ 上类型-$w$工作者和类型-$p$参数服务器的数量</p>
+</li>
+<li><p>$E_j, D_j, M_j$: 作业 $j$ 中训练轮数、数据块数量和每个数据块中的小批次数量</p>
+</li>
+<li><p>$\Delta^\uparrow_{js}$: 将作业 $j$ 的一个数据块传输到服务器 $s$ 的延迟时间</p>
+</li>
+<li><p>$b_w, b_p$: 类型-$w$工作者和类型-$p$参数服务器的带宽</p>
+</li>
+<li><p>$x_j$: 接受作业 $j$ 的决策变量</p>
+</li>
+<li><p>$o_{jw}, o_{jp}$: 作业 $j$ 是否使用类型-$w$工作者和类型-$p$参数服务器</p>
+</li>
+<li><p>$y_{jsw}(t)$: 服务器 $s$ 在时间 $t$ 分配给作业 $j$ 的类型-$w$工作者数量</p>
+</li>
+<li><p>$z_{jsp}(t)$: 服务器 $s$ 在时间 $t$ 分配给作业 $j$ 的类型-$p$参数服务器数量</p>
+</li>
+<li><p>$p_j$: 作业 $j$ 被接受时应支付的费用</p>
+</li>
+<li><p>$a_j, \hat{t}_j$: 作业 $j$ 的开始和完成时间</p>
+</li>
+<li><p>$\psi_j$: 作业 $j$ 的工作者和参数服务器是否放置在一起</p>
+</li>
+<li><p>$k_{wpj}$: 作业 $j$ 使用类型-$w$工作者和类型-$p$参数服务器训练一个小批次的时间</p>
+</li>
 </ul>
-<p>约束条件：</p>
 <h4 id="第四节-1"><a href="#第四节-1" class="headerlink" title="第四节"></a>第四节</h4><p>DPS（Dynamic Pricing and Scheduling）算法的设计主要包括以下几个步骤：</p>
 <ol>
 <li><p><strong>决策变量封装</strong>：首先，DPS将所有决策变量封装成一个新的变量，然后等价地将原始问题重新表述为一个打包问题。这个步骤有助于简化问题的复杂性，使得算法更易于实现和理解。</p>
@@ -374,4 +390,7 @@ if (search_path.length == 0) {
 }
 var path = '/' + search_path;
 searchFunc(path, 'local-search-input', 'local-search-result');
-</script><script type="text/javascript" src="/js/copycode.js?v=1.0.0" successtext="复制成功！"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css?v=1.0.0"><script type="text/javascript" src="/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=1.0.0"></script></div></body></html>
+</script><script type="text/javascript" src="/js/copycode.js?v=1.0.0" successtext="复制成功！"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css?v=1.0.0"><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML" async></script><script type="text/javascript" src="/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=1.0.0"></script></div></body></html>

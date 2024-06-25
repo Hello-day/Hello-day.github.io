@@ -15,7 +15,7 @@
   <entry>
     <title>读导师论文的笔记</title>
     <url>/2024/06/25/%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h3 id="《Online-Scheduling-of-Heterogeneous-Distributed-Machine-Learning-Jobs》"><a href="#《Online-Scheduling-of-Heterogeneous-Distributed-Machine-Learning-Jobs》" class="headerlink" title="《Online Scheduling of Heterogeneous Distributed Machine Learning Jobs》"></a>《Online Scheduling of Heterogeneous Distributed Machine Learning Jobs》</h3><h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ul>
+    <content><![CDATA[<h3 id="Online-Scheduling-of-Heterogeneous-Distributed-Machine-Learning-Jobs"><a href="#Online-Scheduling-of-Heterogeneous-Distributed-Machine-Learning-Jobs" class="headerlink" title="Online Scheduling of Heterogeneous Distributed Machine Learning Jobs"></a>Online Scheduling of Heterogeneous Distributed Machine Learning Jobs</h3><h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ul>
 <li><p> <strong>主题</strong>：分布式机器学习任务中的在线调度问题</p>
 </li>
 <li><p> <strong>问题</strong>:  考虑到需求弹性，在资源有限的情况下，如何确定分配给每个作业的worker和ps的数量、类型以及运行时间，从而最大限度地利用资源，<strong>最小化平均加权完成时间</strong>?</p>
@@ -55,7 +55,7 @@
 <p>  4.算法细节：</p>
 <ul>
 <li><p><strong>截止时间如何划分</strong></p>
-<p>截止时间是通过将潜在完成时间的时间跨度划分为几何递增点来划分的。具体来说，设置 τ0 = 1，τi = 2^i-1。在第 i 轮中，等待直到时间达到 τi，然后将到达时间在 τi 之前的作业划分为集合 Ji。</p>
+<p>截止时间是通过将潜在完成时间的时间跨度划分为几何递增点来划分的。具体来说，设置 $τ_0 = 1$，$τ_i = 2^i-1$。在第 i 轮中，等待直到时间达到$ τ_i$，然后将到达时间在$ τ_i$ 之前的作业划分为集合$ J_i$。</p>
 </li>
 <li><p><strong>对偶近似算法</strong>：原始问题和对偶问题之间存在一种对应关系，通过对偶问题的求解可以获得原始问题的信息</p>
 <ol>
@@ -70,16 +70,16 @@
 <p>超优的不可行解指的是一个在不可行的情况下具有优越性能的解。</p>
 <p>通过对偶近似算法，算法会生成一个长度不超过$ ατi$ 且总权重至少等于最优权重的调度方案。这个调度方案在生成时是不可行的，但通过作业执行跨越多个时间段后会变得可行（原始的不可行解可能在某个时间段无法满足所有作业的要求，但随着时间的推移和作业的执行，可能会出现新的资源或条件使得原本不可行的解变得可行）。因此，通过对偶近似算法生成的超优的不可行解来评估算法的性能和有效性。</p>
 </li>
-<li><p><strong>竞争比率</strong>（competitive ratio）指的是<strong>在线算法的性能与最优离线算法的性能之间的比率</strong>。，4α-competitive 表示在线算法的性能是最优离线算法性能的4倍。$A_{maxweight}$在算法3中的近似比率是 2log λ。这里的近似比率表示 $A_{maxweight}$算法的性能相对于最优解的性能的近似比率。在这种情况下，近似比率为 2 log λ，表明 $A_{maxweight}$ 算法的性能接近最优解的两倍对数级别</p>
+<li><p><strong>竞争比率</strong>（competitive ratio）指的是<strong>在线算法的性能与最优离线算法的性能之间的比率</strong>。<br>$4α-competitive $表示在线算法的性能是最优离线算法性能的4倍。$A_{maxweight}$在算法3中的近似比率是$ 2log λ$。这里的近似比率表示 $A_{maxweight}$算法的性能相对于最优解的性能的近似比率。在这种情况下，近似比率为$ 2 log λ$，表明 $A_{maxweight}$ 算法的性能接近最优解的两倍对数级别</p>
 </li>
 </ul>
 <ul>
 <li><p><strong>$A_{dual}$算法流程，如何衡量不可行程度</strong></p>
 <ol>
 <li>$A_{dual}$算法调用γ-近似算法$A_{maxweight}$进行α轮。在每一轮中，选择尚未在之前轮次中服务过的作业进行调度。</li>
-<li>在第ι（ι ∈ [α]）轮中，从时间(ι-1)τi + 1到时间ιτi内调度Ji中未在之前轮次中服务过的作业。</li>
+<li>在第$ι（ι ∈ [α]）$轮中，从时间$(ι-1)τ_i + 1$到时间$ιτ_i$内调度Ji中未在之前轮次中服务过的作业。</li>
 <li>在每轮中，γ-近似算法的输入是当前轮次尚未服务的作业集合。在第一轮中，根据公式$w(J_{i1}^{s}) \geq \frac{1}{\gamma} w(J^*_{i1})$ 选择作业进行调度。</li>
-<li>对于后续轮次（ι ≥ 2），考虑可以被最优解调度但在前几轮未被$A_{dual}$服务的作业，选择这些作业进行调度。</li>
+<li>对于后续轮次$（ι ≥ 2）$，考虑可以被最优解调度但在前几轮未被$A_{dual}$服务的作业，选择这些作业进行调度。</li>
 <li>通过γ-近似算法的多轮调度，尽可能多地调度作业，以实现最大化总权重的目标。</li>
 </ol>
 </li>
@@ -111,135 +111,9 @@
 <p>证明过程，假设在第$\iota^* $轮实现了最优解，如何求出$\iota^* $，找出了$\iota^* $的上限（略）</p>
 <p>$ \alpha = \left\lfloor \log \frac{w(J) - \log w_{\text{min}}}{\log \gamma - \log(\gamma - 1)} \right\rfloor + 1 $</p>
 <p>其中，$𝑤(𝐽)$ 表示作业集合$ 𝐽$的<strong>总权重</strong>，因为$w(J^*<em>{i1})$未知，只能用作业集合总权重估计。$𝑤</em>{min}$表示作业的最小权重，$𝛾$ 是算法中的近似比率。</p>
-<h4 id="第五节"><a href="#第五节" class="headerlink" title="第五节"></a>第五节</h4><h5 id="公式7："><a href="#公式7：" class="headerlink" title="公式7："></a>公式7：</h5><p>最大化在时间 $\tau_i$ 内完成的作业集合 $J_i$ 中作业的总权重：<br>$\max ∑<em>{j \in [J_i]} ∑_{t \in [\tau_i]} w_j x</em>{jt}$  （7）</p>
-<p>约束条件：</p>
-<ol>
-<li><p>每个作业 $j$ 在时间 $\tau_i$ 内的总工作量不超过1：<br>$∑_{t \in [\tau_i]} x_{jt} \leq 1, \forall j \in [J_i] \quad (7a)$</p>
-</li>
-<li><p>每个作业 $j$ 在时间 $\tau_i$ 内的工作量乘以完成时间不超过 $\tau_i$：<br>$∑_{t \in [\tau_i]} x_{jt} (t + d_j) \leq \tau_i, \forall j \in [J_i] \quad (7b)$</p>
-</li>
-</ol>
-<p>这个优化问题的目标是在给定时间 $\tau_i$ 内最大化作业集合 $J_i$ 中作业的总权重，同时满足每个作业的工作量不超过1，并且工作量乘以完成时间不超过总时间 $\tau_i$</p>
-<h5 id="公式8："><a href="#公式8：" class="headerlink" title="公式8："></a>公式8：</h5><p>最大化作业集合 $J_i$ 中作业的总权重：$\max ∑<em>{j \in [J_i]} ∑_{l \in \Gamma_j} w_j x</em>{jl} \quad (8)$</p>
-<p>约束条件：</p>
-<ol>
-<li>每个作业 $j$ 在时间 $t$、资源类型 $r$、服务器 $h$ 上的工作量不超过资源限制 $Cr_h$：（资源占用情况）<br>$∑<em>{j \in [J_i]} ∑_{l : t \in T(l), h \in l} x</em>{jl} f_{rjh}(l) \leq Cr_h, \forall t \in [\tau_i], r \in [R], h \in [H] \quad (8a)$</li>
-<li>每个作业 $j$ 的总工作量不超过1，确保每个作业最多按照一个时间表执行：<br>$∑_{l \in \Gamma_j} x_{jl} \leq 1, \forall j \in [J_i] \quad (8b)$</li>
-<li>二进制变量：$x_{jl} \in {0, 1}, \forall j \in [J_i], l \in \Gamma_j \quad (8c)$     ，$x_{jl}$表示 job j 是否按照 schedule l∈𝛤𝑗进行调度</li>
-</ol>
-<p>这个优化问题的目标是在满足资源限制的情况下，最大化作业集合 $J_i$ 中作业的总权重，同时确保每个作业的工作量不超过1。</p>
-<h5 id="引入对偶变量，公式9："><a href="#引入对偶变量，公式9：" class="headerlink" title="引入对偶变量，公式9："></a>引入对偶变量，公式9：</h5><p>总权重最大化问题转换成资源成本最小问题。原因：给定有限的资源，调度效用更高的作业</p>
-<h5 id="作业权重减去作业所需资源成本的值越大，越不浪费，可以构造调度"><a href="#作业权重减去作业所需资源成本的值越大，越不浪费，可以构造调度" class="headerlink" title="作业权重减去作业所需资源成本的值越大，越不浪费，可以构造调度"></a><strong>作业权重减去作业所需资源成本的值越大，越不浪费，可以构造调度</strong></h5><p>最小化目标函数：$\sum_{j \in [J_i]} u_j + \sum_{t \in [\tau_i]} \sum_{h \in [H]} \sum_{r \in [R]} \delta_r^h(t) C_r^h$</p>
-<p>对偶线性规划的目标：</p>
-<ul>
-<li>目标：<strong>最小化作业效用和资源成本之和</strong>。</li>
-<li>目标函数：$minimize \sum_{j \in [J_i]} u_j + \sum_{t \in [\tau_i]} \sum_{h \in [H]} \sum_{r \in [R]} \delta_r^h(t) C_r^h$</li>
-</ul>
-<p>其中：</p>
-<ul>
-<li>$u_j$：作业 $j$ 的效用（=作业权重减去作业成本）</li>
-<li>$w_j$：作业 $j$ 的权重</li>
-<li>$\delta_r^h(t)$：在时间 $t$，服务器 $h$ 上资源类型 $r$ 的单位成本</li>
-<li>$C_r^h$：资源类型 $r$ 在服务器 $h$ 上的容量</li>
-</ul>
-<p>公式9a：每个作业 $j \in [J_i]$ 和每个调度 $l \in \Gamma_j$，满足不等式：$u_j \geq w_j - \sum_{t \in T(l)} \sum_{h \in l} \sum_{r \in [R]} \delta_r^h(t) f_{rjh}(l)$</p>
-<p>​                 表示作业的效用 $u_j$ 至少等于作业权重 $w_j$ 减去作业在调度 $l$ 中的资源消耗。</p>
-<p>公式9b：对于每个作业 $j \in [J_i]$，每个时间 $t \in [\tau_i]$，每个服务器 $h \in [H]$，每种资源类型 $r \in [R]$，满足条件：$0 \leq \delta_r^h(t), u_j \geq 0$</p>
-<p>​                 表明在作业调度过程中，资源分配的单位成本和作业的效用均应该为非负值。</p>
-<h5 id="公式10："><a href="#公式10：" class="headerlink" title="公式10："></a>公式10：</h5><p>对偶变量计算公式：</p>
-<ul>
-<li><p>公式：$u_j = \max{0, \max_{l \in \Gamma_j} \text{RHS of (9a)}}$</p>
-</li>
-<li><p><strong>作业权重减去资源成本的值&gt;0，调度</strong>（也就是权重高于估计的服务成本）</p>
-</li>
-<li><p>变量含义：</p>
-<ul>
-<li><p>$u_j$：作业 $j$ 的效用</p>
-</li>
-<li><p>$\Gamma_j$：作业 $j$ 的所有可能调度的集合</p>
-</li>
-<li><p>RHS of (9a)：等式（9a）的右侧值，表示作业 $j$ 在调度 $l$ 下的资源消耗成本</p>
-</li>
-<li><p>计算原因：</p>
-<ul>
-<li>$u_j = \max{0, \max_{l \in \Gamma_j} \text{RHS of (9a)}}$</li>
-<li><strong>如果 $u_j &gt; 0$，则根据最佳调度 $l_j$ 构建作业 $j$ 的调度（$x_{jl_j} = 1$）；否则，不对其进行调度（$x_{jl} = 0, \forall l \in \Gamma_j$）</strong></li>
-<li>这样的计算方式是因为在有限资源的情况下，希望优先调度效用较大的作业，以最大化整体效用并提高资源利用率。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h5 id="公式11："><a href="#公式11：" class="headerlink" title="公式11："></a>公式11：</h5><p>表示了在时间段 $[τ_i]$ 内，对于所有的服务器 $h$、资源 $r$ 和时间 $t$，满足以下关系（价格函数）：</p>
-<ul>
-<li><p>$δ_r^h(β_r^h(t)) = λβ_r^h(t)C_r^h - 1, \quad \forall h \in [H], r \in [R], t \in [τ_i]$</p>
-</li>
-<li><p>其中，$λ = 2(THRF) + 1$</p>
-</li>
-<li><p>含义：当资源 $r$ 在服务器 $h$ 上的分配量为 $β_r^h(t)$ 时，在时间 $t$ 的单位成本 $δ_r^h(t)$ 与资源 $r$ 在服务器 $h$ 上的分配量 $β_r^h(t)$ 之间存在线性关系，且受到参数 $λ$ 和资源容量 $C_r^h$ 的影响。THRF 是作业的资源需求数量</p>
-</li>
-</ul>
-<h4 id="5-2"><a href="#5-2" class="headerlink" title="5.2"></a>5.2</h4><h5 id="成本计算，安置方案，公式12："><a href="#成本计算，安置方案，公式12：" class="headerlink" title="成本计算，安置方案，公式12："></a>成本计算，安置方案，公式12：</h5><p>表示了一个关于在线调度异构分布式机器学习作业的问题，其中包含了多个乘积项的累积：</p>
-<ul>
-<li>公式表达：$min ∑<em>{t \in [t’, t’ + d_j)} ∑_{h \in [H]} ∑</em>{r \in [R]} x_{j,t’} \delta_r^h (t) \left( ∑<em>{m \in [M]} e</em>{r}^{m} y_{jhm} + ∑<em>{p \in [P]} z</em>{r}^{p} s_{jhp} \right)$</li>
-<li>各项含义：<ul>
-<li>$\delta_r^h (t)$：表示资源 r 在服务器 h 上在时间 t 的单位成本。</li>
-<li>$e_{r}^{m}$：表示作业 j 中 worker 类型为 m 的数量。</li>
-<li>$y_{jhm}$：表示作业 j 在服务器 h 上的 worker 类型为 m 的数量。</li>
-<li>$z_{r}^{p}$：表示资源 r 的 PS 类型为 p 的成本。</li>
-<li>$s_{jhp}$：表示作业 j 在服务器 h 上的 PS 类型为 p 的数量。</li>
-<li>$x_{j,t’}$：表示作业 j 在时间点 t’ 的状态。</li>
-</ul>
-</li>
-</ul>
-<p>上述公式表示作业的服务成本的最小化问题，其中包括了作业 j 在时间段[t ′, t ′+dj )内在服务器 h 上使用类型 r 资源的数量 δ r h (t )，以及对应的工作人员和 PS 的成本。**$e_{r}^{m’} y_{jhm’}$表示工作人员 m′ 为作业 j 在服务器 h 上提供服务的成本，$z_{r}^{p’} s_{jhp’}$表示 PS 类型 p′ 为作业 j 在服务器 h 上提供服务的成本。通过最小化这个成本函数，可以得到作业的最优服务成本。**</p>
-<p>公式12a：约束条件描述如下：</p>
-<ul>
-<li>$∑_{t \in [\tau_i]} x_{jt} = 1$</li>
-<li>含义：对于特定的作业 $j$，在时间段 $[\tau_i]$ 内，作业 $j$ 的状态 $x_{jt}$ 的乘积等于1。</li>
-<li>这个约束条件确保了在特定时间段内，作业 $j$ 的状态在所有时间点上都为1，即作业 $j$ 在整个时间段内都是活跃的。</li>
-</ul>
-<h5 id="公式13："><a href="#公式13：" class="headerlink" title="公式13："></a>公式13：</h5><p>表示了一个成本最小化问题，其中包含了多个乘积项的累积：</p>
-<ul>
-<li>最小化目标：该公式的目标是最小化在时间段 [t-, t+) 内，所有服务器 h、资源 r 以及作业 j 的权重的成本。</li>
-<li>公式表达：$\min ∑<em>{t \in [t-, t+)} ∑</em>{h \in [H]} ∑<em>{r \in [R]} \delta_r^h(t) (e_{r}^{m’} y</em>{jhm’} + z_{r}^{p’} s_{jhp’})$</li>
-<li>各项含义：<ul>
-<li>$\delta_r^h(t)$：表示资源 r 在服务器 h 上在时间 t 的单位成本。</li>
-<li>$e_{r}^{m’}$：表示作业 j 中 worker 类型为 m’ 的数量。</li>
-<li>$y_{jhm’}$：表示作业 j 在服务器 h 上的 worker 类型为 m’ 的数量。</li>
-<li>$z_{r}^{p’}$：表示资源 r 的 PS 类型为 p’ 的成本。</li>
-<li>$s_{jhp’}$：表示作业 j 在服务器 h 上的 PS 类型为 p’ 的数量。</li>
-</ul>
-</li>
-</ul>
-<p>上述公式表示作业的服务成本的最小化问题，其中包括了作业 j 在时间段[t ′, t ′+dj )内在服务器 h 上使用类型 r 资源的数量 δ r h (t )，以及对应的工作人员和 PS 的成本。具体来说，$e_{r}^{m’} y_{jhm’}$表示工作人员 m′ 为作业 j 在服务器 h 上提供服务的成本，$z_{r}^{p’} s_{jhp’}$表示 PS 类型 p′ 为作业 j 在服务器 h 上提供服务的成本。通过最小化这个成本函数，可以得到作业的最优服务成本。</p>
-<p>公式13b：$y_{jhm’} \leq D_j$</p>
-<ul>
-<li>含义：约束条件，表示作业 $j$ 在服务器 $h$ 上的 worker 类型为 $m’$ 的数量不超过 $D_j$。</li>
-</ul>
-<p>公式13c：$y_{jhm’} \geq \lceil E_j D_j K_j /d_j \rho_{p’}^{jm’} \rceil$</p>
-<ul>
-<li>含义：约束条件，确保作业 $j$ 在服务器 $h$ 上的 worker 类型为 $m’$ 的数量满足一定的计算条件。</li>
-</ul>
-<p>公式13d：$s_{jhp’} B_{p’} \geq \sum_{h’ \in [H-h]} y_{jh’m’} b_{m’}$, 对于所有 $h$ 满足 $s_{jhp’} &gt; 0$</p>
-<ul>
-<li>含义：约束条件，确保作业 $j$ 在服务器 $h$ 上的 PS 类型为 $p’$ 的数量满足一定的计算条件。</li>
-</ul>
-<p>公式13e：$s_{jhp’} \geq 1$</p>
-<ul>
-<li>含义：约束条件，确保作业 $j$ 在服务器 $h$ 上的 PS 类型为 $p’$ 的数量至少为1。</li>
-</ul>
-<p>公式13f：$y_{jhm’}, s_{jhp’} \in {0, 1, … }$, 对所有 $h \in [H]$, $p \in [P]$</p>
-<ul>
-<li>含义：约束条件，限制作业 $j$ 在服务器 $h$ 上的 worker 和 PS 的数量为非负整数。</li>
-</ul>
-<p>公式13g：$q_j \in {0, 1}$</p>
-<ul>
-<li>含义：约束条件，决定作业 $j$ 放置方案</li>
-</ul>
-<h4 id="5-3理论分析"><a href="#5-3理论分析" class="headerlink" title="5.3理论分析"></a>5.3理论分析</h4><p>竞争比率（competitive ratio）指的是<strong>在线算法的性能与最优离线算法的性能之间的比率</strong>。4α-competitive 表示在线算法的性能是最优离线算法性能的4倍。</p>
+<h4 id="第五节"><a href="#第五节" class="headerlink" title="第五节"></a>第五节</h4><p>竞争比率（competitive ratio）指的是<strong>在线算法的性能与最优离线算法的性能之间的比率</strong>。4α-competitive 表示在线算法的性能是最优离线算法性能的4倍。</p>
 <p><strong>$A_{maxweight}$在算法3中的近似比率是 2log λ(某一轮完成的：最优的比例）。近似比率表示 $A_{maxweight}$算法的性能相对于最优解的性能的近似比率</strong>。近似比率为 2 log λ 表明 $A_{maxweight}$ 算法的性能接近最优解的两倍对数级别</p>
-<h4 id="第六节-实验验证-amp-amp-绩效评估"><a href="#第六节-实验验证-amp-amp-绩效评估" class="headerlink" title="第六节 实验验证&amp;&amp;绩效评估"></a>第六节 实验验证&amp;&amp;绩效评估</h4><h3 id="PPT学习"><a href="#PPT学习" class="headerlink" title="PPT学习"></a>PPT学习</h3><h5 id="线性规划方法"><a href="#线性规划方法" class="headerlink" title="线性规划方法"></a><strong>线性规划方法</strong></h5><p>介绍了线性规划方法，包括以下几种：</p>
+<h3 id="PPT学习"><a href="#PPT学习" class="headerlink" title="PPT学习"></a>PPT学习</h3><h5 id="线性规划方法"><a href="#线性规划方法" class="headerlink" title="线性规划方法"></a><strong>线性规划方法</strong></h5><p>介绍了线性规划方法，包括以下几种：</p>
 <ol>
 <li>单纯形法（Simplex method）：沿着多面体边界的顶点序列进行步行，每一步都会改进目标值。</li>
 <li>内点法（Interior-point method）：在多面体内部行走，每一步朝着多面体中的新可行解前进，新解在多面体内部而不是靠近边界。</li>

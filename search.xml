@@ -13,6 +13,44 @@
       </tags>
   </entry>
   <entry>
+    <title>前端八股笔记</title>
+    <url>/2024/06/27/post/</url>
+    <content><![CDATA[<p>最近准备vivo前端日常实习的面试，非常慌，有一种要被KPI面的预感。不管怎样，背点八股再说。还要把做过的前端项目熟悉下。</p>
+<h2 id="Vue八股"><a href="#Vue八股" class="headerlink" title="Vue八股"></a>Vue八股</h2><h3 id="牛客网别人的面经"><a href="#牛客网别人的面经" class="headerlink" title="牛客网别人的面经"></a>牛客网别人的面经</h3><h4 id="v-if、-v-show的区别，v-if、-v-for谁先执行？"><a href="#v-if、-v-show的区别，v-if、-v-for谁先执行？" class="headerlink" title="v-if、 v-show的区别，v-if、 v-for谁先执行？"></a>v-if、 v-show的区别，v-if、 v-for谁先执行？</h4><p>1.手段：v-if是动态的向DOM树内添加或者删除DOM元素；v-show是通过设置DOM元素的display样式属性控制显隐；</p>
+<p>2.编译过程：v-if切换有一个局部编译/卸载的过程，切换过程中合适地销毁和重建内部的事件监听和子组件；v-show只是简单的基于css切换；</p>
+<p>3.编译条件：v-if是惰性的，如果初始条件为假，则什么也不做；只有在条件第一次变为真时才开始局部编译（编译被缓存？编译被缓存后，然后再切换的时候进行局部卸载); v-show是在任何条件下（首次条件是否为真）都被编译，然后被缓存，而且DOM元素保留；</p>
+<p>4.性能消耗：v-if有更高的切换消耗；v-show有更高的初始渲染消耗；</p>
+<p>5.使用场景：v-if适合运营条件不大可能改变；v-show适合频繁切换。</p>
+<h4 id="父子组件之间的传值方式？"><a href="#父子组件之间的传值方式？" class="headerlink" title="父子组件之间的传值方式？"></a>父子组件之间的传值方式？</h4><p><strong>父向子：</strong></p>
+<p><em>1、props</em></p>
+<p>子组件内, props定义变量, 在子组件使用变量；父组件内, 使用子组件, 属性方式给props变量传值；如下图。</p>
+<img src="https://pic.imgdb.cn/item/667c58f2d9c307b7e95864f3.png" style="zoom: 67%;" />
+
+<img src="https://pic.imgdb.cn/item/667c59b8d9c307b7e9595c34.png" style="zoom: 50%;" />
+
+<p>注意事项：</p>
+<ul>
+<li>父组件的数据发生了改变，子组件会自动跟着变</li>
+<li>子组件不能直接修改父组件传递过来的props，会报错， <strong>props是只读的</strong></li>
+<li>子组件修改，不通知父级，会造成数据不一致</li>
+<li>PS：父组件传给子组件的是一个对象，子组件修改对象的属性，是不会报错的，对象是引用类型, 互相更新</li>
+</ul>
+<p><em>2、通过parent</em> </p>
+<p>子组件，通过this.$parent获取到父组件的值或者方法，并可以直接对其值进行修改或对其方法直接调用</p>
+<img src="https://pic.imgdb.cn/item/667c5ba0d9c307b7e95bd3bb.png" style="zoom: 80%;" />
+
+<img src="https://pic.imgdb.cn/item/667c5bbdd9c307b7e95bf7ee.png" style="zoom: 80%;" />
+
+<p><strong>子向父传值，暂时不想写，略复杂</strong></p>
+<h4 id="路由懒加载怎么实现，路由如何跳转传参，项目哪用到了路由传参"><a href="#路由懒加载怎么实现，路由如何跳转传参，项目哪用到了路由传参" class="headerlink" title="路由懒加载怎么实现，路由如何跳转传参，项目哪用到了路由传参"></a>路由懒加载怎么实现，路由如何跳转传参，项目哪用到了路由传参</h4>]]></content>
+      <categories>
+        <category>学习</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>读导师论文的笔记</title>
     <url>/2024/06/25/%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h3 id="Online-Scheduling-of-Heterogeneous-Distributed-Machine-Learning-Jobs"><a href="#Online-Scheduling-of-Heterogeneous-Distributed-Machine-Learning-Jobs" class="headerlink" title="Online Scheduling of Heterogeneous Distributed Machine Learning Jobs"></a>Online Scheduling of Heterogeneous Distributed Machine Learning Jobs</h3><h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ul>
@@ -135,7 +173,7 @@
 </ol>
 <p>通过这些步骤和特点，同步训练过程可以实现大规模模型的训练，并利用并行计算的优势提高训练效率。</p>
 <h5 id="mini-batch"><a href="#mini-batch" class="headerlink" title="mini-batch"></a><strong>mini-batch</strong></h5><p>在机器学习中，mini-batch（小批量）是指将训练数据集划分为一小批一小批的数据样本进行训练的方法。具体来说，mini-batch是介于全批量（full-batch）和随机批量（stochastic batch）之间的一种训练方式。在mini-batch训练中，每次迭代时模型不会处理整个数据集，而是从数据集中随机选择一小部分数据进行训练。</p>
-<h3 id="《DPS-边缘云网络中分布式机器学习作业的动态定价和调度》"><a href="#《DPS-边缘云网络中分布式机器学习作业的动态定价和调度》" class="headerlink" title="《DPS:边缘云网络中分布式机器学习作业的动态定价和调度》"></a>《DPS:边缘云网络中分布式机器学习作业的动态定价和调度》</h3><ul>
+<h3 id="DPS-边缘云网络中分布式机器学习作业的动态定价和调度"><a href="#DPS-边缘云网络中分布式机器学习作业的动态定价和调度" class="headerlink" title="DPS:边缘云网络中分布式机器学习作业的动态定价和调度"></a>DPS:边缘云网络中分布式机器学习作业的动态定价和调度</h3><ul>
 <li><p><strong>问题</strong>：ML用户使用简单的线性定价方法来估计所需资源的数量是不经济的，很有可能做出错误的估计。对需求的低估会降低训练进度，而过高的估计会导致资源利用效率低下。</p>
 </li>
 <li><p><strong>方法</strong>：研究了在边缘-云网络中针对分布式机器学习作业的动态定价和调度问题。提出了在线框架<strong>DPS（Dynamic Pricing and Scheduling）</strong>。DPS包括作业接纳控制、价格函数设计和调度协调器。通过理论分析证明了DPS具有多项式时间复杂度，并分析了其竞争比。此外，通过测试实验和大规模模拟验证了算法的实际性能。</p>

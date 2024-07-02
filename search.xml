@@ -13,44 +13,6 @@
       </tags>
   </entry>
   <entry>
-    <title>前端八股笔记</title>
-    <url>/2024/06/27/post/</url>
-    <content><![CDATA[<p>最近准备vivo前端日常实习的面试，非常慌，有一种要被KPI面的预感。不管怎样，背点八股再说。还要把做过的前端项目熟悉下。</p>
-<h2 id="Vue八股"><a href="#Vue八股" class="headerlink" title="Vue八股"></a>Vue八股</h2><h3 id="牛客网别人的面经"><a href="#牛客网别人的面经" class="headerlink" title="牛客网别人的面经"></a>牛客网别人的面经</h3><h4 id="v-if、-v-show的区别，v-if、-v-for谁先执行？"><a href="#v-if、-v-show的区别，v-if、-v-for谁先执行？" class="headerlink" title="v-if、 v-show的区别，v-if、 v-for谁先执行？"></a>v-if、 v-show的区别，v-if、 v-for谁先执行？</h4><p>1.手段：v-if是动态的向DOM树内添加或者删除DOM元素；v-show是通过设置DOM元素的display样式属性控制显隐；</p>
-<p>2.编译过程：v-if切换有一个局部编译/卸载的过程，切换过程中合适地销毁和重建内部的事件监听和子组件；v-show只是简单的基于css切换；</p>
-<p>3.编译条件：v-if是惰性的，如果初始条件为假，则什么也不做；只有在条件第一次变为真时才开始局部编译（编译被缓存？编译被缓存后，然后再切换的时候进行局部卸载); v-show是在任何条件下（首次条件是否为真）都被编译，然后被缓存，而且DOM元素保留；</p>
-<p>4.性能消耗：v-if有更高的切换消耗；v-show有更高的初始渲染消耗；</p>
-<p>5.使用场景：v-if适合运营条件不大可能改变；v-show适合频繁切换。</p>
-<h4 id="父子组件之间的传值方式？"><a href="#父子组件之间的传值方式？" class="headerlink" title="父子组件之间的传值方式？"></a>父子组件之间的传值方式？</h4><p><strong>父向子：</strong></p>
-<p><em>1、props</em></p>
-<p>子组件内, props定义变量, 在子组件使用变量；父组件内, 使用子组件, 属性方式给props变量传值；如下图。</p>
-<img src="https://pic.imgdb.cn/item/667c58f2d9c307b7e95864f3.png" style="zoom: 67%;" />
-
-<img src="https://pic.imgdb.cn/item/667c59b8d9c307b7e9595c34.png" style="zoom: 50%;" />
-
-<p>注意事项：</p>
-<ul>
-<li>父组件的数据发生了改变，子组件会自动跟着变</li>
-<li>子组件不能直接修改父组件传递过来的props，会报错， <strong>props是只读的</strong></li>
-<li>子组件修改，不通知父级，会造成数据不一致</li>
-<li>PS：父组件传给子组件的是一个对象，子组件修改对象的属性，是不会报错的，对象是引用类型, 互相更新</li>
-</ul>
-<p><em>2、通过parent</em> </p>
-<p>子组件，通过this.$parent获取到父组件的值或者方法，并可以直接对其值进行修改或对其方法直接调用</p>
-<img src="https://pic.imgdb.cn/item/667c5ba0d9c307b7e95bd3bb.png" style="zoom: 80%;" />
-
-<img src="https://pic.imgdb.cn/item/667c5bbdd9c307b7e95bf7ee.png" style="zoom: 80%;" />
-
-<p><strong>子向父传值，暂时不想写，略复杂</strong></p>
-<h4 id="路由懒加载怎么实现，路由如何跳转传参，项目哪用到了路由传参"><a href="#路由懒加载怎么实现，路由如何跳转传参，项目哪用到了路由传参" class="headerlink" title="路由懒加载怎么实现，路由如何跳转传参，项目哪用到了路由传参"></a>路由懒加载怎么实现，路由如何跳转传参，项目哪用到了路由传参</h4>]]></content>
-      <categories>
-        <category>学习</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>读导师论文的笔记</title>
     <url>/2024/06/25/%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h3 id="Online-Scheduling-of-Heterogeneous-Distributed-Machine-Learning-Jobs"><a href="#Online-Scheduling-of-Heterogeneous-Distributed-Machine-Learning-Jobs" class="headerlink" title="Online Scheduling of Heterogeneous Distributed Machine Learning Jobs"></a>Online Scheduling of Heterogeneous Distributed Machine Learning Jobs</h3><h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ul>
